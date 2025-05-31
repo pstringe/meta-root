@@ -1,0 +1,110 @@
+## Review of 02
+00 : MOD 
+	00 : IMP  : 02 : 00 : 00 : `(DEF Manifold)`
+
+## Requirments
+01 : MOD
+	01 : PROP : 01 : 00 : 01 : `(< (Pd (S (T N))) (Pg (S (T N))) )` # Greater Rep P Discriminated
+	02 : OBSD : 01 : 00 : 02 : `(< (Pd (S (T N))) (Pg (S (T N))) )`
+	03 : PROP : 01 : 00 : 03 : `(Pg (i (S (T N))))`
+	04 : IMP  : 01 : 00 : 04 : `(i (S (T N)))` #10:30
+	05 : PROP : 01 : 00 : 05 : `(< (Pd (S (U t)))) (Pg (S (U t))) )`
+	06 : OBSD : 01 : 00 : 06 : `(< (Pd (S (U t)))) (Pg (S (U t))) )`
+	07 : PROP : 01 : 00 : 07 : `(Pg (d (S (U t))))`
+	08 : IMP  : 01 : 00 : 08 : `(d (S (U t)))` #10:42
+	09 : PROP : 01 : 00 : 09 : `(^ (Pd (~l)) (Pg l) )`
+	10 : OBSD : 01 : 00 : 09 : `(^ (Pd (~l)) (Pg l) )`
+
+# 11:49 #12:111
+## head err
+01 : MOD
+	00 : PROP : 01 : 01 : 00 : `P : {~P} := P : x          : {~P}`
+	01 : PROP : 01 : 01 : 01 : `P : {~P} := P : [({id} x)] : {~P}`
+	02 : OBSD : 01 : 01 : 02 : `P : {~P} := P : [ 1 ]      : {~P}`  
+ 	03 : OBSD : 01 : P : `(P (d x))` #12:29
+
+## {head stomach} err
+02 : MOD 
+	00 : PROP : INTR : 01 : 02 : `P : {~P} := P : x          : {~P}`
+	01 : PROP : INTR : 01 : 02 : `P : {~P} := P : [({id} x)] : {~P}`
+	02 : OBSG : INTR : 01 : 02 : `P : {~P} := P : [ 1 ]      : {~P}`
+	03 : OBSD : INTR : 01 : 02 : `(P (d x))` # 12:33
+
+# Intelligence Review Procedure
+03 : MOD
+	00 : PROP : 01 : [READ, EVAL, ]
+
+# Derivation of Assembly Grammar 0
+04 : MOD   
+	00 : PROP : TECH : ASM : 01 : 04 : 00 : `mov ah, 3ch`
+	01 : PROP : TECH : ASM : 01 : 04 : 01 : `mov cx, 0`
+	02 : PROP : TECH : STR : 01 : 04 : 02 : `(= (diff {0} {1}) `00001100111`)` 
+	03 : PROP : TECH : STR : 01 : 04 : 03 : `00001100111`
+	04 : PROP : TECH : STR : 01 : 04 : 04 : `mov `
+	05 : PROP : TECH : STR : 01 : 04 : 05 : `ah`
+	06 : PROP : TECH : STR : 01 : 04 : 06 : `cx`
+	07 : PROP : TECH : STR : 01 : 04 : 07 : `, ` 
+	08 : PROP : TECH : STR : 01 : 04 : 08 " `0`
+	09 : PROP : TECH : STR : 01 : 04 : 09 : `3ch`
+	10 : PROP : TECH : STR : 01 : 04 : 10 : ` `
+	11 : PROP : TECH : STR : 01 : 04 : 11 : `{04}{07}{{05}{06}}, {{08}{09}}`
+	12 : PROP : TECH : STR : 01 : 04 : 12 : `mov {`ah`, `cx`}, {`3ch`, `0`}`
+	13 : PROP : TECH : STR : 01 : 04 : 13 : `mov ah, 3ch`
+	14 : PROP : TECH : STR : 01 : 04 : 14 : `mov ah, 0`
+	15 : PROP : TECH : STR : 01 : 04 : 15 : `mov cx, 3h`
+	16 : PROP : TECH : STR : 01 : 04 : 16 : `mov cx, 0`
+	17 : PROP : TECH : STR : 01 : 04 : 17 : `(:= {11} {{13} ... {16}})`
+	18 : PROP : TECH : STR : 01 : 04 : 18 : `(:= {11} {{13} ... {16}})` # 20:20
+
+05 : MOD
+	00 : PROP : INTR : 01 : 
+
+# Hype/sub-spatial mirrored auto-morphism
+06 : MOD #01:59
+	00 : PROP : (P (:Y (=> ({id} P) ({id} Y) ) )
+	01 : PROP : ((p||| ..P) (:Y (=> ({id} P) ({id} Y) ) ) ) )
+	02 : PROP : (i
+
+# Delimiting/delieation of subspace
+07 : MOD #17:32 
+	00 : PROP : (+ P ({id} P)
+	01 : PROP : (= (+ P ({id} P)) ({pm}|||..P))
+	02 : PROP : 
+
+# Quadratic vectors
+08 : MOD #18:32 
+	00 : PROP : `[ x  (f x)]`
+	01 : PROP : `[ x  (ex x 2)]`
+	02 : PROP : `[-5  25]`
+	03 : PROP : `[-4  16]`
+	03 : PROP : `[-3  9 ]`
+	04 : PROP : `[-2  4 ]`
+	05 : PROP : `[-1  1 ]`
+	06 : PROP : `[ 0  0 ]`
+ 	07 : PROP : `[ 1  1 ]`
+	08 : PROP : `[ 2  4 ]`
+	09 : PROP : `[ 3  9 ]`
+        10 : PROP : `[ 4  16]`
+	11 : PROP : `[ 5  25]`
+
+09 : MOD 	#18:08
+	00 : PROP : `(= (= (f x)   (* (-1) (ex x 2) )`
+	01 : PROP : `(= (= (f -5)  (* (-1) (ex -5 2))`
+	02 : PROP : `(= (= (f -4)  (* (-1) (ex -4 2))`
+	03 : PROP : `(= (= (f -5)  (* (-1) (ex -3 2))` 
+
+10 : MOD
+	00 : PROP : OBSD : RL0 : `({~P} (P (PR DF)))`
+	01 : PROP : 0000 : RL0 : `(Pg (DEF DF))`
+	02 : PROP : 0000 : RL0 : `(Pg (DEF (PR DF)))`
+	03 : PROP : IMP  : RL0 : `(DEF DF)`
+	04 : PROP : IMP  : RL0 : `(DEF (PR {PR {PR}})))` #21:02
+
+#QM
+11 : MOD
+	00 : PROP : 
+
+#05/30/25 05:29
+12 : MOD
+	00 : PROP : 	
+	
