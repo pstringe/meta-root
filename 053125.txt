@@ -271,7 +271,70 @@
 	33 : PROP : IMP  : NULL : 0915 : Identify Develop method for redacting lines/modules from push
 
 32 : MOD
-    00 : PROP : OBSD : `P : {~P} := P : x : {~P}`
+    	00 : PROP : OBSD : `P : {~P} := P : x : {~P}`
 
 33 : MOD
-    00 : PROP :
+    	00 : PROP : OBSD : `(P (Df Mf))` # 09:31
+ 	01 : PROP : OBSD : ``
+
+## Proto Game Theory # 21:30
+34 : MOD
+	00 : PROP : {G Pl Pr N}
+	01 : PROP : (:=  G [ [ G Pl Pr N ][()] ... [G Pl Pr N][(m ... ())])
+	02 : PROP : (:= Pl [ Pl[()] ... Pl[(m ... ())] ])
+	03 : PROP : (:= Pr [ Pr[()] ... Pr[(m ... ())] ])	# 
+	04 : PROP : (:=  N [ N[()] ... N[(m ... ())] ]) 	# Inferences
+	05 : PROP : (:=  V [ V[()] ... V[(m ... ())] ]) 	# Validity Rules
+	06 : PROP : (:== (V G[{() ... (m ... ())}] N[{() ... (m ... ())}]) T F)	# :== Value/Classifiaction (>> (:== x {CLASS_0 CLASS_1}) (inc x {CLASS_1 CLASS_2}) ) 
+	07 : PROP : 
+	```
+		(>> 
+			(= (V G[{() ... (m ... ())}] N[{() ... (m ... ())}]) T)
+			(:= 	
+				(m G[{() ... (m ... ())}]) 
+				(N[{() ... (m ... ())}] 
+					G[{() ... (m ... ())}]) 
+				)
+			)
+		)
+	```
+	08 : PROP :
+		
+## Game Contexts 0
+35 : MOD
+	00 : PROP : `Optimal Error`
+	01 : PROP : `FM`
+	02 : PROP : `FM {Sp Mf}`
+	03 : PROP : `TY PR`
+	04 : PROP : `TY`
+	05 : PROP : `PR`
+	06 : PROP : `FRND`
+	08 : PROP : `OPOSITION`
+	10 : PROP : `FNC`
+	11 : PROP : `LEGAL`
+	12 : PROP : `PHYS`
+	13 : PROP : `HLTH`
+	14 : PROP : `KNWLDG`
+	15 : PROP : `ERSR`
+	16 : PROP : `INTL`
+	17 : PROP : `RSRCH`
+	18 : PROP : `TRNG`
+	19 : PROP : `ENG`
+
+## Game Contexts 1
+36 : MOD
+	00 : PROP : `Self-Modifying Games`
+	01 : PROP : `Hyper-Temporal Games`
+	02 : PROP : `Hyper-Spatial Games`
+	03 : PROP : `Information/Security Persistance Games`
+	06 : PROP : `Computational Games`
+	07 : PROP : `Mathematical Games`
+	08 : PROP : `Inductive Games`
+	09 : PROP : `Deductive Games`
+	04 : PROP : `Political Games`
+
+37 : MOD
+
+		
+
+
