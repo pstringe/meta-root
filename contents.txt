@@ -3,4 +3,6 @@
 0001 `./codes.txt`
 0002 `../(!= (()()) ()).md`
 0003 `../## Example of Temporal Causes of Regulation.md`
-
+0004 `./052925.txt`
+0005 `./053025.txt`
+0006 `./053125.txt`

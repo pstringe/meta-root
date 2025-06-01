@@ -1,4 +1,4 @@
-# 1:40
+# 40
 00 : MOD
 	00 : PROP : 00 : `(< (d[s] (P (S (T N)))) (d[s] (P (S (T N))))`
 	00 : PROP : 01 : `()[(][<][(][d][s][(][P][(][S][(][T][N][)][)][)][)]`
@@ -154,8 +154,9 @@
 
 ## Theoretical Assembly
 15 : MOD
-	00 : TRMS :
-
+	00 : TRMS : `0000 0000 0000 0000`
+    00 : TRMS : `0000 0000 0000 0001`
+    00 : TRMS : `0000 0000 0000 0000
 #Meta-Maps
 16 : MOD
 
@@ -220,9 +221,9 @@
 
 
 22 : MOD
-(=> (-> (p||| (Df Mf)) (Df Mf)) (<- (p||| (Df Mf)) (Df Mf)) )
-(=> (
-
+    00 : PROP : (=> (-> (p||| (Df Mf)) (Df Mf)) (<- (p||| (Df Mf)) (Df Mf)) )
+    01 : PROP : (=> (<- (m||| (p||| (Df Mf))) P) (m (<- (m||| (p||| (Df Mf))) P))
+    02 : IMP  : (=> (Pg ((m .. P)g (m (<- (m||| (p||| (Df Mf))) P)) ) # 12:12
 (===
 	(-> (p||| (Df Mf)) (M
 ```
@@ -269,3 +270,8 @@
 	32 : PROP : OBSD : NULL	: NULL : (P (v (P GH) (P (CNST VC)
 	33 : PROP : IMP  : NULL : 0915 : Identify Develop method for redacting lines/modules from push
 
+32 : MOD
+    00 : PROP : OBSD : `P : {~P} := P : x : {~P}`
+
+33 : MOD
+    00 : PROP :
