@@ -1,0 +1,182 @@
+
+# Grammar of 06012500
+# Atoms
+00 : MOD
+        00 : PROP : A
+        01 : PROP : N
+        02 : PROP : V
+        01 : PROP : ({id} a)
+        01 : PROP : ( + a a )
+        02 : PROP : ( - a a )
+        03 : PROP : ( = a a )
+        04 : PROP : ( * a a )
+        05 : PROP : ( / a a )
+        06 : PROP : (:= a a )
+        07 : PROP : (== a a )
+        08 : PROP : (: a a )
+	
+01 : MOD
+	00 : PROP : [`(` `[` `A` `V` `{` `i` `d` `}` `a` `+` `-` `*` `/` `=` `:` `p` `m` `]` `)` `>`]
+	01 : PROP : [`b` `c` `z` `w` `d` `f` `g` `j` `h` `k` `l` `m` `n` `q` `r` `t` `v` `s` `t` `y`] 
+
+# ()
+02 : MOD 
+	00 : PROP : bxt
+	01 : PROP : bat
+	02 : PROP : bet
+	03 : PROP : bit
+	04 : PROP : bot
+	05 : PROP : but
+
+# (()())
+03 : MOD 
+	00 : PROP : bx bxt x bxt xt
+	01 : PROP : bx bat x bat xt
+	02 : PROP : bx bat x bet xt
+	03 : PROP : bx bat x bit xt
+	04 : PROP : bx bat x bot xt
+	05 : PROP : bx bat x but xt
+	.
+	.
+	.
+	24 : PROP : bx but x but xt
+
+04 : MOD 
+	000 : PROP : ba bat a bat at
+	001 : PROP : ba bat a bat et
+	002 : PROP : ba bat a bat it
+	003 : PROP : ba bat a bat ot
+	004 : PROP : ba bat a bat ut
+	.
+	.
+	.
+	124 : PROP : bu bat u bat ut
+
+05 : MOD 
+	000 : PROP : ba bat a bet at
+	001 : PROP : ba bat a bet et
+	002 : PROP : ba bat a bet it
+	003 : PROP : ba bat a bet ot
+	004 : PROP : ba bat a bet ut
+	.
+	.
+	.
+	124 : PROP : bu bat a bet ut
+
+	.
+	.
+	.
+
+22 : MOD
+	000 : PROP : ba but a but at
+	001 : PROP : ba bat a but et
+	002 : PROP : ba but a but it
+	003 : PROP : ba but a but ot
+	004 : PROP : ba but a but ut
+	.
+	.
+	. 
+	124 : PROP : bu but u but ut
+
+23 : MOD
+	00 : PROP : 
+
+# ({+ - * /} a a)
+24 : MOD 
+	00 : PROP : bdjhht  
+	00 : PROP : b dklmnj h h t 
+
+---
+26 : MOD
+	00 : PROP : (: (d (e (P x))) (==> x P ))
+	01 : PROP : (>> (==> x P) (i (- ({~P} P) (P P))) )
+	02 : PROP : (>> (i (- ({~P} P) (P P))) ( 
+
+27 : MOD
+	00 : CONJ : 
+	```
+	(=> 
+		(d (e (<- P {~P})))
+		(i |d(p|||..{~P})|)
+	)
+	```
+
+# (:= () (()()))
+28 : MOD
+	00 : PROP : bx rxq bxt bx bxt x bxt xt at 
+	00 : PROP : ba raq bat ba bat a bat at at
+	01 : PROP : ba raq bat ba bat a bat at et
+	02 : PROP : ba raq bat ba bat a bat at et
+	
+	.
+	.
+	.
+
+# 
+# (:= 
+	(:= () (()())) 
+	(
+		(:= () (()()))
+		(:= () (()()))
+	)
+# )
+
+29 : MOD
+	00 : PROP 	
+	ba raq 
+		ba raq 
+			bat 
+			ba bat a bat at 
+		et 
+		ba 
+			ba raq 
+				bat 
+				ba bat a bat at 
+			et
+			ba raq
+				bat
+				ba bat a bat at  
+		et
+	et
+	
+	01 : PROP
+	ba yy
+		ba raq
+			bat ca ba va bat at as
+			ba 
+				bat ca ba va bat at as
+				a 
+				bat ca ba va bat at as
+			at
+		et
+		
+		ba
+			ba raq
+				bat ca ba va bat at as
+				ba
+					bat ca ba va bat at as
+					a
+					bat ca ba va bat at as
+				at
+			et
+			ba raq
+				bat ca ba va bat at as
+				ba 
+					bat ca ba va bat at as
+					a
+					bat ca ba va bat at as
+				at
+			et
+		et
+	et		
+
+
+---
+## Base 5 numerals
+30 : MOD
+	00 : PROP : bat
+	01 : PROP : ba va bat at
+        02 : PROP : ba va ba va bat at et
+	03 : PROP : ba va ba va ba va bat at et it
+	04 : PROP : ba va ba va ba va ba va bat at et it ot
+	05 : PROP : ba va ba va ba va ba va ba va bat at et it ot ut
