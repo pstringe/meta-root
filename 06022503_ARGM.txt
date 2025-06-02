@@ -1,0 +1,147 @@
+# On Relational Entropy
+00 : MOD
+	00 : PROP : (- (Ag A) (Ad A))
+
+	01 : PROP : (- (Bg B) (Bd B))
+
+	02 : PROP : (- (A (m .. A)) (A A))
+
+	03 : PROP : (- (B (m .. B)) (B B))
+
+	04 : PROP : (=> (~(A x)) ({~A} x))
+
+01 : MOD
+	## Req Proof
+	00 : PROP : 
+	```
+	(=> 
+		(^ 
+			(A x) 
+			(^
+				(~((m A) x))
+				((m..(m..A)) x)
+			)
+		)
+		(({pm}|||..A) (m|||..x))
+	)
+	```
+	
+	01 : PROP :
+	```
+	(=>
+		(!= (- A ({pm}|||..A)) 0)
+		(!= 
+			(- 
+				(A {A{~A}})
+				({pm}||| {A{~A}})
+			)
+			0
+		)
+	)
+	```
+
+	02 : PROP : 
+	```
+	(=>
+		(A (!= ({pm}|||..A) A))
+		(:E a (A (!= (a A) (a ({pm}||| .. A)) ) ) )
+	)
+	```
+
+	03 : PROP : 
+	```
+	(=>
+		(({pm}||| .. A) (!= ({pm}||| .. A) A))
+		(:E a (A (!= (a A) (a ({pm}||| .. A)))))
+	)
+	```
+
+	04 : PROP : 
+	```
+	(=>
+		(({pm}||| .. A) (!= ({pm}||| .. A) A))
+		(:E a (A (!= (a A) (a ({pm}||| .. A)))))
+	)
+	```
+
+02 : MOD
+	## Req def significance
+	00 : PROP
+	```
+	(=>
+		(i |a|)
+		(i (lk ({a{~a}} a)))
+	)
+	```
+
+	01 : PROP 
+	```
+	(=>
+		(i |a|)
+		(i (lk ({a{~a}} a)))
+	)
+	```
+
+	02 : PROP
+	```
+	(=>
+		({a{~a}} a)
+		(!= |a| 0)
+	)
+	```
+	03 : PROP
+	```
+	(=>
+		({({pm}|||..A) A} x)
+		(!= |x| 0)
+	)
+	```
+
+	04 : PROP : `(:E a (A (!= (a A) (a ({pm}||| .. A)))))`
+	
+	05 : PROP : `(a A)`
+	
+	06 : PROP : `(a ({pm}||| .. A))`
+
+03 : MOD
+	00 : PROP : `(A (u (A x)))`
+	01 : PROP : `(=> (A (u (A x))) (!= |(u (A x))| 0))`
+	02 : PROP : `(A x)`
+	03 : PROP : `(=> (A x) (<= (e (A x)) (mx (e (A x)))))`
+	04 : PROP : `(=> (~(A x)) (> (e (A x)) (mx (e (A x)))))`
+	05 : PROP : `(=> (~(A x)) ({~A} x)) )`
+
+04 : MOD
+	## This requires proof as a conjunction is concievable
+	00 : PROP : 
+	```
+	(=> 
+		(<= (e ({~A} x)) (mx (e ({~A} x))))
+		(> (e (A x)) (mx (e (A x))))
+	)
+	```
+	
+	01 : PROP : 
+	```
+	(=>
+		({~A} x)
+		(> (e ({~A} x)) (mx (e ({~A} x))))
+	)
+	```
+	02 : PROP : `(=> (A x) (<= (e (A x)) (mx (e (A x)))))`
+	03 : PROP : `(=> (~(A x)) ({~A} x))`
+	```
+	(=>
+		(~(A x))
+		(> (e (A x)) (mx (e (A x))) )
+	)
+	```
+	04 : PROP : 
+	```
+	(=>
+		(> (e (A x)) (mx (e (A x))) ) 
+		(<= (e ({~A} x))) (mx (e (A x))) )
+	)
+	```
+
+#8:47
