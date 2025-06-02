@@ -1,0 +1,183 @@
+## On the actuation of an abstraction of information
+00 : MOD
+	00 : PROP : ({P{~P}} {P{~P}})
+	01 : PROP : (- (P {P{~P}}) ({~P} {P{~P}}))
+	02 : PROP : (:= (P {P{~P}}) (m|||(p|||{P{~P}})) )
+	03 : PROP : 
+	```
+	(=>
+		(m|||(p|||{P{~P}}))
+		(p|||{P{~P}})
+	)
+	```
+	
+	04 : PROP : 
+	```
+	(=> 
+		({P{~P}} x) 
+		((p|||{P{~P}}) 
+			(m|||x)
+		)
+	)
+	```
+01 : MOD
+	# expressions relevant to actuation of over any abstractions of information 
+	00 : PROP : (- ((p|||{P{~P}}) (m|||x)) ({P{~P}} x))
+
+	01 : PROP : (- (m|||(p|||{P{~P}})) (p|||{P{~P}})) 
+
+	02 : PROP : (r ((p|||{P{~P}}) (m|||x)) ({id} (p|||{P{~P}})) )
+
+	03 : PROP : (r ({id} (p|||{P{~P}})) (P ({id} (p|||{P{~P}})) )
+
+	# Perspective P
+	04 : PROP : (- ((p|||{P{~P}}) (m|||x)) ({P{~P}} x))
+
+	05 : PROP : (- (m|||(p|||{P{~P}})) (p|||{P{~P}})) 
+
+02 : MOD
+	00 : PROP : (r ((p|||{P{~P}}) (m|||x)) ({id} (p|||{P{~P}})) )
+
+	01 : PROP : (r ({id} (p|||{P{~P}})) (P ({id} (p|||{P{~P}})) )
+
+	# representation of reaction
+	02 : PROP : (- (P (p|||{~P})) (p|||{~P}) )
+
+	03 : PROP : (=> ({P{~P}} x) ((p|||{P{~P}}) (m|||x)))
+
+03 : MOD 
+	# meta-representation of P
+	00 : PROP 
+	```
+	(=> 
+		((p|||{P{~P}}) (m|||x)) {
+			(==>
+				({pm}|||(p|||P))
+				(p|||P)
+				(m|||x)
+				({id}({id}(p|||P)))
+			)
+			(==>
+				({pm}|||(p|||P))
+				(==>
+					(m|||x)
+					(p|||P)
+				)
+			)
+		}
+	)
+	```
+
+	01 : PROP 
+	```	
+	({+ - ~ }>
+		{P{~P}} {
+			(==>
+				({pm}|||(p|||P))
+				(p|||P)
+				(m|||x)
+				({id}({id}(p|||P)))
+			)
+			(==>
+				({pm}|||(p|||P))
+				(==>
+					(m|||x)
+					(p|||P)
+				)
+			)
+		}
+		({id}({id}{P{~P}}))
+	)
+	```
+
+	02 : PROP
+	```
+	({P{~P}}
+		({+ - ~ }>
+			{P{~P}} {
+				(==>
+					({pm}|||(p|||P))
+					(p|||P)
+					(m|||x)
+					({id}({id}(p|||P)))
+				)
+				(==>
+					({pm}|||(p|||P))
+					(==>
+						(m|||x)
+						(p|||P)
+					)
+				)
+			}
+			({id}({id}{P{~P}}))
+		)
+	)
+	```
+	
+	03 : PROP
+	```
+	({P{~P}} {gd}
+		({P{~P}}
+			({+ - ~ }>
+				{P{~P}} {
+					(==>
+						({pm}|||(p|||P))
+						(p|||P)
+						(m|||x)
+						({id}({id}(p|||P)))
+					)
+					(==>
+						({pm}|||(p|||P))
+						(==>
+							(m|||x)
+							(p|||P)
+						)
+					)
+				}
+				({id}({id}{P{~P}}))
+			)
+		)
+	)
+	```
+
+	# The entropy of P-not-P's representation of the reaction of {P{~P}}
+	04 : PROP 
+	```
+	(e
+		({P{~P}} {gd}
+			({P{~P}}
+				({+ - ~ }>
+					{P{~P}} {
+						(==>
+							({pm}|||(p|||P))
+							(p|||P)
+							(m|||x)
+							({id}({id}(p|||P)))
+						)
+						(==>
+							({pm}|||(p|||P))
+							(==>
+								(m|||x)
+								(p|||P)
+							)
+						)
+					}
+					({id}({id}{P{~P}}))
+				)
+			)
+		)
+	)
+	```
+	
+	05 : PROP : (P (p|||{~P}))
+	06 : PROP : (P (m|||(p|||{~P})))
+	07 : PROP :
+	```
+	(P
+		(=>
+			({id} (p|||{~P}))
+			({id} (m|||(p|||{~P})))
+		)
+	)
+	```
+

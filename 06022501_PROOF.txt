@@ -1,0 +1,38 @@
+# On the representaiton of abstracitons of information
+00 : Module
+
+# On the minimum number of interactions neccessitated by the observation of an abstraction of information
+01 : Module
+
+# On the intractability of temporal observation
+02 : Module
+
+# On the necessary error, and the continuous delineation of subspaces
+03 : Module
+
+# On the necessary dilation of a certain sub-spaces
+04 : Module 
+
+# On negative rates of change in time and instantaneous/retro-active process-completion
+05 : Module
+
+# Retro-active computation as a solution to the intractability of observation
+06 : Module 
+
+# On the utilization of retro-active compute for contextual completion of implication
+07 : Module
+
+# On process completion and inconsistency
+08 : Module
+
+# On inconsistency and logical erasure
+09 : Module
+
+# On error, uncertainty, consistency, integrity, and entropic erasure
+10 : Module
+
+# On logical/entropic erasure and contextual integration
+11 : Module 
+
+# On contextual integration, primitive recursive origins of eschatalogical implications
+12 : Module

@@ -1,0 +1,59 @@
+MOD : 00 
+	PROP : 00 : `()`
+	PROP : 01 : `(:= () ({() {~()}} ()))`
+	PROP : 02 : `(:= ({() {~()}} ()) {(() ()) ({~()} ())}`
+	PROP : 03 : `{ (() ()) ({~()} ()) }`
+
+MOD : 01
+	PROP : 00 : `(Pg x)`
+	PROP : 01 : `(Pg (Pg x))`
+	PROP : 02 : `(Pd (Pg x))`
+	PROP : 03 : `(=> (Pg x) {x {~x}})`
+	PROP : 04 : 
+	```
+	(:= 
+		{03} { 
+			(=> (Pg x) x) 
+			(=> (Pg x) {~x})
+		}
+	)
+	PROP : 05 : `(=> (Pg x) x)`
+	PROP : 06 : `(=> (Pg x) {~x})`
+	PROP : 07 : `(:= (Pg x) ({P {~P}} (Pg x)))`
+	PROP : 08 : `({P {~P}})`
+	PROP : 09 : 
+	```
+	(:= 
+		({P {~P}} (Pg x) {
+			({~P} (Pg x)) 
+			(P (Pg x))})
+		}
+	)
+	```
+	PROP : 10 : `({~P} (Pg x))`
+	PROP : 11 : `(P (Pg x))`
+	PROP : 12 : `({= !=} ({~P} (Pg x)) (P (Pg x)))`
+	PROP : 13 : 
+	```
+	(:=
+		({= !=} ({~P} (Pg x)) (P (Pg x))) {
+			(= ({~P} (Pg x)) (P (Pg x)))
+			(!= ({~P} (Pg x)) (P (Pg x)))
+		} 
+	)
+	```
+	PROP : NULL : (= ({~P} (Pg x)) (P (Pg x)) )
+	PROP : NULL : 15 : (!= ({~P} (Pg x)) (P (Pg x)) )
+	PROP : INFR : 16 : (>> (= a b) (~(!= a b)))	
+	PROP : INFR : 17 : (>> (!= a b) (~(= a b)))
+	```
+	(=>
+		(!= ({~P} (Pg x)) (P (Pg x)) )
+		(!= (- ({~P} (Pg x)) (P (Pg x)) ) 0)
+	)
+
+MOD : 02 #5:14 05:16
+	PROP : 00 : `(!= (- ({~P} (Pg x)) (P (Pg x))) 0)`
+	PROP : 01 : ``
+
+ 		
