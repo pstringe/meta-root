@@ -1,0 +1,6 @@
+00 : MOD
+	#ID: TYPE  CREAT  START  ESTE   CMPL   LANG   CONTENT
+	00 : IMP : 1101 : 1117 : 1110 : 1118 : BASH : `cp './Type Syntax.md .'`
+	01 : IMP : 1102 : 1119 : 1115 : 1121 : BASH : `mv 'Type Syntax' 06022504_NOTES.txt`
+	02 : IMP : 1107 : NULL : 1200 : NULL : NULL : `(FRMT '06022504_NOTES.txt')`
+	03 : IMP : 1108 :      :      :      :      :

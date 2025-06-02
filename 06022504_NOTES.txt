@@ -1,0 +1,297 @@
+---
+modified: 2025-06-02T10:56:27-07:00
+---
+[[Formal Grammar Based Type Theory]]
+```
+(()[()] ()[(m())])
+(()[()] : ()[(m(m()))])
+(= (p ())[(m())] :)
+[()[()] : ()[(m(m()))]]
+(= (p ())[(m())] :)
+(:= (p(p()))[()] {
+	(:x (∈ x S))     # S is the set of Strings
+	(:x[()] (∈ x T)) # T is the set of Types
+})
+(:= (p(p(p())))[(m(m()))] (: x (⊆ x (p(p(p()))) )))
+
+(<==>
+	(∈ (p(p(p(p())))) P) # P is the set of logical propositions describing the properties of the type/property. 
+	# A type/property may be formulated as a logical predicate, (property {Type Property}), and vice versa. If we assign a type to a predicate, we may represent it as a function.
+	(^ (p(p())) (p()))
+)
+
+(
+	()[()]
+)
+
+(= (m| (p())[()])) (()[()]) )
+
+(~(m| (p(p())) ))
+
+# x is in the set of types if x is a top-level property
+(=>
+	(^
+		(∈ x P)
+		(~(m|x))
+	)
+	(∈ x T)
+)
+
+(=> 
+	(^
+		(∈ x T)
+		(∈ c P)
+		(:= c[(m(m()))] x[()])
+	)
+	(=>
+		(^
+			(∈
+				[c[()] : x[(m(m()))]]
+				T 
+			)
+			(∈
+				[c[()] : x[(m(m()))]]
+				P 
+			)	
+		)
+	)
+)
+```
+
+## Example
+Given:
+```
+[P : {
+	[map : Map]
+	[devices : Device[]]	
+}]
+
+[Map : {
+	[width: Number],
+	[height: Number],
+	[matrix: {0, 1, 2}[][width][height]]
+}]
+
+[Device : {
+	[pos : Number[2]]
+	[dir : Number]
+	[cover : 
+		(Map, pos, dir) -> [{0 .. Map.height}, {0 .. Map.width}]
+	] 
+}]
+```
+```
+[P : {
+	[map : Map]
+	[devices : Device[]]	
+}]
+
+# replace the reference to the map type with it's definition
+[P : {
+	[map : 
+		[Map : {
+			[width: Number],
+			[height: Number],
+			[matrix: {0, 1, 2}[height][width]]
+		}]
+	]
+	[devices : Device[]]	
+}]
+
+# remove the reference and keep only the the set of properties
+[P : {
+	[map : {
+			[width: Number],
+			[height: Number],
+			[matrix: {0, 1, 2}[height][width]]
+	}]
+	[devices : Device[]]	
+}]
+
+# width and height may be any element from the set of Numbers
+# matix may be any array with 'height' number of arrays of 'width' number of elements from the set {0, 1, 2} 
+[Map : {
+	[width: Number],
+	[height: Number],
+	[matrix: {0, 1, 2}[height][width]]
+}]
+```
+
+## Foundational Types
+```
+[Abstraction: {
+	[type : Type],
+	[properties : {
+		[type : Type],
+		[properties : {}],
+		[(complexity ()): (Abstraction) -> Number],
+	}],
+	[(complexity ()): (Abstraction) -> Number],
+}]
+
+[Type : {
+	type : Type
+	properties : Property{}
+}]
+
+[Property : {
+	[type: Type]
+	[properties: Property{}]
+}]
+
+[Set : {
+	[elements : Abstraction{}]
+	[cardinality : Natural]
+	[properties : {
+		
+	}]
+}]
+
+[Natural : {
+	[type: Number]
+	[properties : {
+		(∈ () Types),
+		(=> 
+			(∈ x ()[()])
+			(∈ x ()[(m(m()))][0][(m(m()))])
+		)
+	}]
+}]
+
+# On Functional Concepts
+(:= 
+	(P Function) 
+	[Function : {
+		[type : Type]
+		[arity : Number]
+		[domain : Set]
+		[range : type{}]
+		[paramaters : Paramater[]]
+		[arguments : Argument[]]
+		[properties : {}]
+	}])
+)
+
+[Paramater : {
+	[symbol : Abstraction],
+	[type : Type]
+	[properties : {}]
+}]
+
+[Argument : {
+	[symbol : Abstraction]
+}]
+
+(:= 
+	(P (CS Function)) 
+	[Function : {
+	}]
+)
+
+(:=
+	(P (CS Procedure))
+	[Procedure : {
+	}]
+)
+
+(:= 
+	(P (Algerbra Function))
+	[Function : {
+	}]
+)
+
+(:=
+	(P (CS Map))
+	[Map : {
+	}]
+)
+
+(:=
+	(P (SetTheory Map)) 
+	[Map : {
+	}]
+)
+
+(:=
+	(P (Algerbra Transformation))
+	[Transformation : {
+	}]
+)
+
+(:= 
+	(P (MARKOV PROCESS)) 
+	[PROCESS : {
+	}]
+)
+
+# Use a typedef to produce a structure isomorphic to the ones we've been manipulating
+[RepresentativeAbstraction : ({
+		[type: Abrstraction],
+		[complexity: (Abstaction) -> Number],
+		[abstraction: ((complexity ()) (complexity (p||())) -> ],
+		[p : (RepresentativeAbstraction) -> RepresentativeAbstraction{}],
+		[m : (RepresentativeAbstraction) -> RepresentativeAbstraction{}],
+		[p| : {
+			[RepresentativeAbstraction{} : {
+			}]
+		}],
+		[m| : RepresentativeAbstraction{}],
+		[m|| : RepresentativeAbstraction{}],
+		[m|| : RepresentativeAbstraction{}],
+		[properties: (U {} (properties type))],
+		[representation : (()) -> (m||())],
+	}
+]
+
+# Remember, the type just defines the properties of the elements of a set for which the properties are instanciated.
+
+
+```
+
+## Interrogation
+```
+(:= 
+	(P QM)
+	[QM : {
+	}]
+)
+
+(:=
+	(P (QM MUSIC)) 
+	[MUSIC : {
+		[properties : {
+			(r MUSIC (P (MARKOV PROCESS)))
+		}]		
+	}]
+)
+
+(:=
+	(P Rigour)
+	[Function : {
+		[type : Number{}]
+		[arity : 1]
+		[domain : Set]
+		[range : type{}]
+		[paramaters : Paramater[]]
+		[arguments : Argument[]]
+	}]
+)
+
+(:= 
+	(P ({~P} HL))
+	[Abstraction : 
+		[properties:
+			[(p ||())]
+		]
+	]
+)
+```
+## Related
+[[Refactor Timesheet]]
+[[Physical Mapping and Object Detection for Security and CQB]]
+- [ ] [[Type Syntax]]
+      [clock::2025-04-06T21:40:21--2025-04-06T23:04:54]
+      [clock::2025-04-06T23:30:13--2025-04-07T00:11:04]
+      [clock::2025-04-07T00:27:45--2025-04-07T03:33:02]
+      [clock::2025-04-07T11:23:08--2025-04-07T12:45:48]
+- [ ] Process [[Rep Logic Versions]] ⏳ 2025-04-07 

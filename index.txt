@@ -1,0 +1,54 @@
+A
+	abstraction
+	algorithm
+	axiom
+	addition
+B
+C
+	constraint
+D
+	division
+	decrease
+E
+	entropy
+	equality
+	expression
+F
+G
+H
+I
+	increase
+	imperative
+	implication
+	inference
+J
+K
+L
+M
+	multiplication
+	meta
+N
+O
+P
+	proposition
+Q
+	quantifier
+R
+	reduction
+	reference
+	representation
+S
+	subtraction
+T
+	theorem
+	truth : [
+		0007 : { 03 04 }
+		
+	]
+U
+V
+	validity
+W
+X
+Y
+Z

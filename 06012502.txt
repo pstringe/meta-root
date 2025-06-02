@@ -1,0 +1,45 @@
+MOD : 00
+	00 : IMPN : `(DEF Cnt)`
+	00 : IMPN : 
+	```
+	(P 
+		(d 
+			(e 
+				(r 
+					(r 
+						({id} {~P}) 
+						({id} (P {P {~P}}) 
+					)
+					Cnt
+				)
+			)
+		)
+	)
+	```
+	
+	01 : IMP : `[05 31 25]`
+	02 : IMP : `[05 20 25]`
+	03 : IMP : `[06 01 25 01 00]`
+	04 : IMP : `[]`
+
+# Proto Optimization Theory
+MOD : 01 
+
+# Rep Theory
+MOD : 02 
+
+# Mechanical Process Theory
+MOD : 03 
+
+# Part Theory
+MOD : 04
+
+# Population Theory
+MOD : 05 
+  
+MOD : 06 
+
+MOD : 07
+
+MOD : 08
+
