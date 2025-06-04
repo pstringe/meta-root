@@ -1,0 +1,108 @@
+# AWK Grammar Specification
+00 : MOD
+	00 : PROP :
+	```
+	(:= 
+		Keywords
+		[BEGIN END if else while for do break continue next nextfile function return print printf delete in]
+	)
+	```
+	
+	01 : PROP : # write utility to add quotes
+	```
+	(:=
+		Operator
+		[ + - * / % ^ ! ~ && || < <= == != >= > ? : = += -= *= /= %= ^= ] 
+	)
+	```
+	
+	02 : PROP : 
+	```
+	(:=
+		Punctuation
+		[ ( ) { } [ ] , ; ] 
+
+	)
+	```
+	
+	03 : PROP : 
+	```
+	(:=
+		Literals
+		[Numbers Strings Identifiers]
+	)
+	```
+	
+	04 : PROP : 
+	```
+	(:= 
+		Numbers
+		"[0-9]+(\.[0-9]+)?"
+	)
+	```
+
+	05 : PROP : 
+	```
+	(:=
+		Strings
+		"([^"\\]|\\.)*" 
+	)
+	```
+
+	06 : PROP : 
+	```
+	(:= 
+		Identifiers
+		"[a-zA-Z_][a-zA-Z0-9_]*"
+	)
+	```
+
+01 : MOD	
+	00 : PRD : program         ::= { pattern_action }
+	01 : PRD : pattern_action  ::= pattern ["{" { statement } "}"]
+	02 : PRD :                  | "{" { statement } "}"
+	03 : PRD : pattern         ::= expression
+	04 : PRD : statement       ::= expression ";"
+       	05 : PRD :     	            | "if" "(" expression ")" statement ["else" statement]
+        06 : PRD :       	    | "while" "(" expression ")" statement
+        07 : PRD :  	  	    | "for" "(" opt_expr ";" opt_expr ";" opt_expr ")" statement
+        08 : PRD : 		    | "for" "(" identifier "in" expression ")" statement
+        09 : PRD :          	    | "do" statement "while" "(" expression ")" ";"
+        10 : PRD :                  | "break" ";"
+        11 : PRD :             	    | "continue" ";"
+        12 : PRD :          	    | "next" ";"
+        13 : PRD :           	    | "nextfile" ";"
+        14 : PRD :           	    | "exit" [expression] ";"
+        15 : PRD :            	    | "return" [expression] ";"
+        16 : PRD :           	    | "print" print_list ";"
+        17 : PRD :                  | "printf" string_expression {"," expression} ";"
+        18 : PRD :                  | "delete" identifier ["[" expression "]"] ";"
+        19 : PRD :            	    | "{" { statement } "}"
+	20 : PRD : expression      ::= assignment
+	21 : PRD : assignment      ::= logical_or { assign_op logical_or }
+	22 : PRD : assign_op       ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "^="
+	23 : PRD : logical_or      ::= logical_and { "||" logical_and }
+	24 : PRD : logical_and     ::= comparison { "&&" comparison }
+	25 : PRD : comparison      ::= concatenation { comp_op concatenation }
+	26 : PRD : comp_op         ::= "==" | "!=" | "<" | "<=" | ">" | ">="
+	27 : PRD : concatenation   ::= additive { additive }
+	28 : PRD : additive        ::= multiplicative { ("+"|"-") multiplicative }	
+	29 : PRD : multiplicative  ::= unary { ("*"|"/"|"%") unary }
+	30 : PRD : unary           ::= ["+" | "-" | "!" | "~"] primary
+	31 : PRD : primary         ::= number | string | identifier | array_access 
+        32 : PRD : 	            | "(" expression ")" | function_call
+	33 : PRD : function_call   ::= identifier "(" [ expression { "," expression } ] ")"
+	34 : PRD : array_access    ::= identifier "[" expression "]"
+	35 : PRD : opt_expr        ::= [expression]
+	36 : PRD : identifier      ::= /[a-zA-Z_][a-zA-Z0-9_]*/
+	37 : PRD : number          ::= /[0-9]+(\.[0-9]+)?/
+	38 : PRD : string          ::= /"([^"\\]|\\.)*"/
+	39 : PRD : print_list      ::= [ expression { "," expression } ]
+	40 : PRD : string_expression ::= string | expression
+
+	50 : PRD : 
+	```
+	function name(param1, param2, ...) {
+ 	   # body
+	}
+	```
