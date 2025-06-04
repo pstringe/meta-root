@@ -1,29 +1,12 @@
-# 4: 30 (-> {~P} P (m||| ENTROPY_REDUCTION_ALGO))
-
-# ENTROPY_REDUCTION ALGO 1D
-00 : MOD
-	00 : PROP : x
-	00 : PROP : A
-	01 : PROP : N
-	02 : PROP : V
-	01 : PROP : ({id} x)
-	01 : PROP : ( + a b )
-	02 : PROP : ( - a b )
-	03 : PROP : ( = a b )
-	04 : PROP : ( * a b )
-	05 : PROP : ( / a b )
-	06 : PROP : (:= a b )
-	07 : PROP : (== a b )
-	08 : PROP : (: a b )
-
+# FORMAL_SYSTEM_FOR_DERIVATION_OF_ENTROPY_REDUCTION_ALGO_1D
 01 : MOD 
 	00 : PROP : 
 	```
 	(:= 
 		A 
 		[
-			x 
-			({i d} x) 
+			A[()] 
+			({i d} A[()]) 
 			[A[()] A[(m())]]
 		]
 	)
@@ -66,8 +49,7 @@
 	)
 	```
 	
-
-## 	
+## General Validation of Inferences	
 01 : MOD
 	01 : PROP : 
 	```
@@ -82,6 +64,7 @@
 		)
 		
 	)
+
 
 	
 	

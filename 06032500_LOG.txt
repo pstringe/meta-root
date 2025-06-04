@@ -1,0 +1,163 @@
+00 : MOD 
+	00 : TYPE : SRC
+	01 : TYPE : CLSS
+	02 : PROC : EVAL
+	03 : PROC : READ
+	04 : PROC : WRITE
+	05 : PROC : ERASE
+
+01 : MOD 
+	00 : ARG  : A
+	01 : ARG  : B
+	02 : SRC  : P
+	03 : SRC  : {~P}
+	00 : IMP  : 0000 : 0103 
+	01 : IMP  : 0004 : 0001 : 0200
+
+02 : MOD 
+	00 : STR  : NULL  : [C , N] 	
+	01 : PROP : PROPN : # over-writing tap, turning machine is not deterministic
+	02 : PROP : NULL  : (=> (~(det m)) (~(mech m)))      
+
+03 : MOD # 6:00
+	01 : IMP : `Add relational entropy proof` #ignore 
+
+# Update contents
+04 : MOD
+	00 : IMP : BASH : `ls`
+	01 : IMP : BASH : 
+	```
+	for item in "${array[@]}"; do
+		echo "$item"
+	done
+	```
+	02 : IMP : BASH : 
+05 : MOD
+	00 : PROP :  
+	```
+	(:E F
+		(=>  
+			(d (- (Fd {F{~F}}) (Fg {F{~F}})))
+		 	(i (- (Pd {P{~P}}) (Pg {P{~P}})))
+		)
+	)
+	
+	01 : PROP : 
+	```
+
+	```
+06 : MOD
+	00 : PROP : EXP
+	01 : PROP : ENV
+	02 : PROP : PRC
+
+07 : MOD 
+	00 : PROP : TH
+	01 : PROP : (inc a TH)
+	02 : PROP : (inc b TH)
+	03 : PROP : ({U N / S/} a b)
+	
+	04 : PROP : 
+	```
+	(:= ({U N / S/} a b) {
+		(U a b)
+		(N a b)
+		(/ a b)
+		(S/ a b)		
+ 	})
+	```
+# Problem Theory
+08 : MOD
+	00 : PROP : `Pr`
+	01 : PROP : `A`
+	02 : PROP : `(=> (inc a Pr) (inc (m a) Pr))`
+	03 : PROP : 
+	```
+	(:
+		(=> x (m .. x))
+		(> (e (m .. x)) (e x))
+	)
+	``` 				# given x find sucession
+	
+	04 : PROP : 
+	```
+	(: 
+		(=> x (p .. x))
+		(> (e (p .. x)) (e x))
+	)
+	``` 				# given x find precesion
+	
+	05 : PROP : 
+	```
+	(=> 
+		{(p .. x) (m .. x)} 
+		x
+	)
+	```
+	
+	06 : PROP : `(> {(e (p..x)) (e (m..x))} (e x))` # given a precesion sucession of x find x
+	06 : PROP :  
+
+09 : MOD #8:31 #Non-Deterministic Proof
+        01 : PROP : P : {~P} := P : P : {~P} : {~P}
+        02 : PROP : P : {~P} := P : (+ (* |(P P:{~P})| (P P:{~P})) (* |({~P} P:{~P})| ({~P} P:{~P})) : {~P}
+        03 : PROP :          := |P : + : [ * * ] : || :   P      : P:{~P}
+                                |P : + : [ * * ] : || : {~P}     : P:{~P}
+                             =:  P : + : [2 *]   : | || : {P {~P}} : P:{~P}
+                                                   |      {P {~P}} : P:{~P}
+                         
+        04 : PROP :
+        ```
+        P : {~P} :=  P : + :| * :| || : P    : (P:{~P}) |: {~P}
+                                :|      P    : (P:{~P}) |
+                            | * :| || : {~P} : (P:{~P}) |
+                                :|      {~P} : (P:{~P}) |
+        ```
+                        
+        05 : OBSG :
+        ```
+        P : {~P} :=  P : + :| * [{~0}]| || : P    : (P:{~P}) |: {~P}
+                                [{~0}]|      P    : (P:{~P}) |
+                            | * [ 0  ]| || : {~P} : (P:{~P}) |
+                                [{~0}]|      {~P} : (P:{~P}) |
+        ```
+        
+        06 : OBSD : (< (Pd ({id}P)) (Pg ({id} P)) )
+          
+        07 : OBSD :
+        ```
+        (P
+                (=>
+                        ({06}
+                                (!=
+                                        (-
+                                                (P    `| * [ 0  ]| || : {~P} : (P:{~P}) |`)
+                                                ({~P} `| * [ 0  ]| || : {~P} : (P:{~P}) |`)
+                                        )
+                                )
+                        )
+                )  
+        )  
+        ```
+	
+ 	08 : PROP : 
+        ```
+        P : {~P} :=  P :| P    : + :| * [{~0}]| || : P    : (P:{~P}) |: {~P}|: {~P}
+                        |               [{~0}]|      P    : (P:{~P}) |      |
+                        |           | * [  0 ]| || : {~P} : (P:{~P}) |      |
+                        |               [{~0}]|      {~P} : (P:{~P}) |      |
+                     P :| {~P} : + :| * [{~0}]| || : P    : (P:{~P}) |: {~P}|
+                                        [{~0}]|      P    : (P:{~P}) |
+                                    | * [{~0}]| || : {~P} : (P:{~P}) |
+                                        [{~0}]|      {~P} : (P:{~P}) |
+        ```
+        
+	09 : OBSG :
+        ```
+        (P
+                (d  
+                        (Pd `| * [ 0 ]| || : {~P} : (P:{~P}) |`)
+                        (Pg `| * [ 0 ]| || : {~P} : (P:{~P}) |`)
+                )   
+        )
+
