@@ -1,0 +1,203 @@
+#PROTO ENG THEORY
+00 : MOD
+	00 : PROP : ENG
+	01 : PROP : ING
+	02 : PROP : GENI
+	03 : PROP : GENU
+	04 : PROP : INTL
+	05 : PROP : (:= ENG {INTL ING})
+	06 : PROP : (:= ING {GENI GENU})
+	07 : PROP : (GENU GENI)
+	08 : PROP : 
+	```
+	(=> 
+		(GENU x) 
+		(: (GENI ({pm}||| .. x))
+			(=>> 
+				(GENI ({pm}||| .. x))
+				(: ({id} GENI)
+					(=>
+						(GENU ({id} GENI))
+						(d 
+							{
+								(- 
+									(GENUd {GENU{~GENU}}) 
+									(GENUg {GENU{~GENU}}) 
+								)
+								(e (GENU {GENU{~GENU}})
+							}
+						)
+						
+					)
+				)
+			)
+		)
+	) 
+		
+	09 : PROP : 
+	```
+	(=> 
+		(inc i INTL) 
+		(< 
+			(e (INTL {INTL{~INTL}}))
+			(e ({~INTL} {INTL{~INTL}}))
+		)
+	)
+	```
+
+# Proc depth procedure. (Method of Senior Eng With Regulated Resources) 
+03 : MOD
+	00 : PROP : ()
+	01 : PROP : {~()}
+	02 : PROP : {(){~()}}
+	01 : PROP : (m {(){~()}})
+	02 : PROP : (>> {(){~()}} (m {(){~()}}) )
+	03 : PROP : (=> ({(){~()}} {(){~()}}) ({id} (e (m {(){~()}}))))
+
+04 : MOD 
+	00 : PROP : x
+	01 : PROP : P
+	02 : PROP : (P x)
+	03 : PROP : (=> (P x) (({pm}|||..P) ({pm}|||..x)) )
+	04 : PROP : (=> (({pm}||| .. P) ({pm}||| .. x)) ({id} ({pm}||| .. P)) )
+	05 : PROP : `(=: (P ({id} ({pm}||| .. P))) (P (m x)) )`
+	06 : PROP : `(e (m x))`
+	07 : PROP : `(=> (P x) (e (m x)) )`
+
+05 : MOD 
+	00 : PROP : `{A, N, V, T}`
+	01 : PROP : `(:= A { x })`
+	02 : GIVN : 0005 : 0031 : 0025 : 0034 : 00004
+	03 : GIVN : 0005 : 0031 : 0035 : 0034 : 00005
+	04 : GIVN : 0005 : 0031 : 0035 : 0003 : 00000
+	05 : GIVN : 0005 : 0031 : 0035 : 0003 : 00001
+	06 : GIVN : 0005 : 0031 : 0035 : 0003 : 00002
+	07 : GIVN : 0005 : 0031 : 0035 : 0003 : 00003
+	05 : PROP : `(N[{() ... (m ... ())}] (m .. A[{() .. (m .. ())}]) ))`
+	06 : PROP : 
+	```
+	(: 
+		(e (N[{() ... (m ... ())}] (m .. A[{() .. (m .. ())}]) ))
+			(==
+				(V[{() ... (m ... ())}] 
+					N[{() ... (m ... ())}] 
+					(m .. A[{() ... (m ...())}]) 
+				) 
+				T ## Factual Truth
+			)
+		)
+	)
+	```
+	
+	07 : PROP : 
+	```
+	(=>
+	)
+	```
+
+	
+ 
+# Containment Theory
+02 : MOD
+	00 : PROP : ()
+	01 : PROP : (())
+	02 : PROP : ()()
+	02 : PROP : (()())
+	03 : PROP : ((()))
+
+03 : MOD
+	02 : PROP : ( = |()|   		() 	)
+	03 : PROP : ( = |(())| 		(()) 	)
+	04 : PROP : ( = |()()| 		((())) 	) #un-contained
+	05 : PROP : ( = |(()())|        ((())) 	)
+	06 : PROP : ( = |((()))|        (()) 	)
+
+# minimum entropy of contained abstractions
+04 : MOD 
+	00 : PROP : ( =  (mn (e ())     ) 	(e ()) 	 )
+	01 : PROP : ( := (mn (e (())    ) 	(e ()) 	 )
+	02 : PROP : ( := (mn (e (()())) )  	(e ())   )
+	03 : PROP : ( := (mn (e ((()))  )       (e (())) )
+	
+
+# maximum entropy of critical abstractions
+05 : MOD
+	# equality constraints 
+	00 : PROP : (=> (= a () ) (= (mx (e a)) (e ()) ))
+	01 : PROP : (=> (= b (()) ) (= (mx (e b)) (e (())) ))
+	02 : PROP : 
+	```
+	(=> 
+		(^ 
+			{02}
+			{4.3}
+		)
+		(^
+			(>= (e b) (e ()) )
+			(<= (e b) (e (()) ) )
+		)
+	) 
+	```
+	
+	02 : PROP : (:= a ({a {~a}} a))
+	03 : PROP : 
+	```
+	(:=
+		({a {~a}} a) {
+			(a a)
+			({~a} a)
+		} 
+	)	
+	```
+	04 : PROP : (a a)
+	05 : PROP : ({~a} a)
+	06 : PROP : (N (a a) ({~a} a))
+	07 : PROP : (U (a a) ({~a} a))
+	08 : PROP : (e (N (a a) ({~a} a))
+	09 : PROP : (e (U (a a) ({~a} a))
+	10 : PROP : (:x (inc x a))
+	11 : PROP : (:z (inc z {~a}))
+	12 : PROP : (e z)
+	13 : PROP : (e x) 
+	14 : PROP : (e (a a))
+	15 : PROP : (e ({~a} a))
+	16 : PROP : ({>=<} (e (a a)) (e ({~a} a)))
+	17 : PROP : (e a)
+	18 : PROP : (e {~a})
+	19 : PROP : ({>=<} (e a) (e {~a}))
+
+# Entropy of containment of abstractions
+#Ex 0
+06 : MOD
+	00 : PROP : `(:= (e a) (prd i 0 |a| (e a[i])) )`
+	01 : PROP : `(:= (e (()())) (prd i () |(()())| (e (()())[i])) )`
+	02 : PROP : `(:= (e (()())) (prd i () ((())) (e (()())[i]) )`
+	03 : PROP : 
+	```
+	(:=
+		(e (()()))
+		(*
+			(e (()())[()])
+			(e (()())[(())])
+		)
+	)
+	```
+	04 : PROP : `(= (e (()())[()]) (e ()) )` 
+	05 : PROP : `(= (e (()())[(())] (e ()) )`
+
+	
+# style and entropy of context
+03 : MOD
+
+# reduction of critical abstractions
+04 : MOD 
+
+# actuation of critical abstractions
+05 : MOD 
+
+# confinment of critical abstractions
+06 : MOD
+
+
+
+	
