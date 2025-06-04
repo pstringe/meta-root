@@ -1,0 +1,374 @@
+## High-Level Imperative Programming Grammar
+## Write a grammar capable of generalizing the construction of the following code: 
+00 : MOD 
+	01 : INSTR : C : #include "ft_printf.h"
+	02 : INSTR : C : int chr(t_m *m, char buf[MAX])
+	03 : INSTR : C : {
+	04 : INSTR : C : 	int arg;
+	05 : INSTR : C :	int w;
+	06 : INSTR : C :	int i;
+
+	07 : INSTR : C : 	arg = va_arg(m->ap, int);
+	08 : INSTR : C : 	w = m->place->width - 1;
+	09 : INSTR : C : 	i = -1;
+	10 : INSTR : C :	if (!(m->place->flags & MINUS))
+	11 : INSTR : C :		while (w-- > 0)
+	12 : INSTR : C :			buf[m->pos_b++] = ' ';
+	13 : INSTR : C : 	buf[m->pos_b++] = !arg ? '\0' : arg;
+	14 : INSTR : C : 	if (m->place->flags & MINUS)
+	15 : INSTR : C :		while (w-- > 0)
+	16 : INSTR : C :			buf[m->pos_b++] = ' ';
+	17 : INSTR : C : 	return (0);
+	18 : INSTR : C : }	
+	```
+## Enumeration of Grammar Features
+01 : MOD 
+	00 : IMP : function ✅ 2025-05-07
+	01 : IMP : - [x] definition ✅ 2025-05-07
+	02 : IMP : 	- [x] prototype ✅ 2025-05-07
+	03 : IMP : 	- [x] body ✅ 2025-05-07
+	04 : IMP : 		- [x] instructions ✅ 2025-05-07
+	05 : IMP : - [x] call ✅ 2025-05-07
+	06 : IMP : 	- [x] name ✅ 2025-05-07
+	07 : IMP : 	- [x] arguments ✅ 2025-05-07
+
+	08 : IMP : - [x] paramaters ✅ 2025-05-07
+	09 : IMP : - [x] arguments ✅ 2025-05-07
+	10 : IMP : - [x] types ✅ 2025-05-07
+
+	11 : IMP : - [x] dereferences ✅ 2025-05-07
+	12 : IMP : - [x] general-dereferences ✅ 2025-05-07
+	13 : IMP : - [x] structural-dereferences ✅ 2025-05-07
+	
+	14 : IMP : - [x] index ✅ 2025-05-07
+
+	15 : IMP : - [x] variable ✅ 2025-05-07
+
+	16 : IMP : - [x] string ✅ 2025-05-07
+	17 : IMP : - [x] character ✅ 2025-05-07
+
+	18 : IMP : - [ ] operation
+	19 : IMP : - [ ] binary
+	20 : IMP : 	- [ ] logical
+	21 : IMP : 	- [ ] bitwise
+	22 : IMP : 	- [ ] arithmetic
+	23 : IMP : - [ ] unary
+	24 : IMP : 	- [ ] ++
+	25 : IMP : 	- [ ] --
+	
+	26 : IMP : - [x] name ✅ 2025-05-07
+	27 : IMP : - [x] arguments ✅ 2025-05-07
+
+	28 : IMP : - [x] instructions ✅ 2025-05-07
+	29 : IMP : - [x] declaration ✅ 2025-05-07
+	30 : IMP : - [x] assignment ✅ 2025-05-07
+	31 : IMP : - [x] control-flow ✅ 2025-05-07
+
+	32 : IMP : - [x] control-flow ✅ 2025-05-07
+	33 : IMP : - [x] if ✅ 2025-05-07
+	34 : IMP : - [x] while ✅ 2025-05-07
+
+	35 : IMP : - [x] if ✅ 2025-05-07
+	36 : IMP : - [x] while ✅ 2025-05-07
+	37 : IMP : - [x] paramater ✅ 2025-05-07
+	38 : IMP : - [x] argument ✅ 2025-05-07
+	39 : IMP : - [x] string ✅ 2025-05-07
+	40 : IMP : - [x] number ✅ 2025-05-07
+	41 : IMP : - [x] bool ✅ 2025-05-07
+	42 : IMP : - [x] char ✅ 2025-05-07
+	43 : IMP : - [x] void ✅ 2025-05-07
+	44 : IMP : - [x] general-dereferences ✅ 2025-05-07
+	45 : IMP : - [x] structural-dereferences ✅ 2025-05-07
+	46 : IMP : - [x] array ✅ 2025-05-07
+	47 : IMP : - [x] number-type ✅ 2025-05-07
+	48 : IMP : - [x] boolean-type ✅ 2025-05-07	
+	49 : IMP : - [x] character-type ✅ 2025-05-07
+	50 : IMP : - [x] string-type ✅ 2025-05-07
+	51 : IMP : - [x] void-type ✅ 2025-05-07
+
+02 : MOD
+	00 : 05 : 29 : 25 : 00 : 00 : 09 : (:= `<function-definition>` `<prototype><body>`)
+	01 : 05 : 29 : 25 : 00 : 00 : 09 : (:= `<function-call>` `<name>(<arguments>)`)
+	02 : 05 : 29 : 25 : 00 : 00 : 09 : (:= `<prototype>` `<type><white-space><name>(<paramaters>)`)
+	03 : 05 : 29 : 25 : 00 : 00 : 09 : (:= `<body>` `{<instructions>}`)
+	```
+	(:= `<instructions>` {
+		`<declaration>`
+		`<variable-assignment>`
+		`<control-flow-structure>`
+		`<instructions>\n<instructions>`
+	})
+	```
+
+	(:= `<type>` {
+		`<number-type>`
+		`<boolean-type>`
+		`<character-type>`
+		`<string-type>`
+		`<void-type>`
+		`<string>`
+	})
+
+	(:= `<name>` `<string>`)
+
+	(:= `<paramaters>` {
+		`<paramater>`
+		`<paramater>, <parameter>`
+	})
+
+	(:= `<arguments>` {
+		`<argument>`
+		`<argument> <argument>`
+	})
+
+	(:= `<parameter>` {
+		`<type> <variable-name>`
+		`<type> <general-dereference>` 
+	})
+
+	(:= `<argument>` `<variable-name>`)
+
+	(:= `<declaration>` {
+		`<variable-declaration>`
+		`<typedef-declaration>`
+	})
+
+	(:= `<dereference>` {
+		`<general-dereference>`
+		`<structure-dereference>`
+	})
+
+	(:= `<general-dereference>` {
+		`*`
+		`<general-dereference><general-dereference>`
+	})
+
+	(:= `<structure-dereferenc>`
+		`<dynamic-structure-dereference>`
+		`<static-structure-dereference>`
+	)
+
+	(:= `<dynamic-structure-dereference>` {
+		`<variable-name>-><property-name>`
+		`<dynamic-structure-dereference>-><property-name>`
+	})
+
+	(:= `<static-structure-dereference>` {
+		`<variable-name>.<property-name>`
+		`<static-structure-dereference>.<property-name>`
+	})
+
+	(:=
+		`<property-name>` `<variable-name>`
+	)
+
+	(:= `<reference>` `&`)
+
+	(:= `<index>` {
+		`<variable-name>[<number>]`
+		`<variable-name>[<variable-name>]`
+	})
+
+	(:= `<variable>` {
+		`<variable-name>`
+		`<variable-declaration>`
+		`<variable-assignment>`
+	})
+
+	(:= `<variable-name>` `<string>`)
+
+	(:= `<variable-declaration>` {
+		`<type><whitespace><variable-name>`;
+		`<type><whitespace><variable-assignment>`
+	})
+
+	(:= `<variable-assignment> {
+		`<variable-name>` = '<character>'
+		`<variable-name> = <number>`
+		`<variable-name> = <boolean>`
+		`<variable-name> = <string-literal>`
+		`<variable-name> = <string>`
+		`<variable-name> = <expression>`
+		`<varaible-name> = <array>`
+		`<variable-name> = <variable-name>`
+	})
+
+	(:= `<string>` {
+		`<character>`
+		`<string><character>`
+		`<string><whitespace>`
+	})
+
+	(:= `<string-literal>` `"<string>"`)
+
+	(:= `<character>` {`a`..`z`,`A`..`Z`, `0`..`9`,`!`..`)`}) # any ascii char
+
+	(:= `<whitespace>` {
+		` `
+		`\t`
+		'\n'
+	})
+
+	(:= `<number>` {
+		<integer>
+		<float>
+		{`0` .. `9`}
+		<number><number>
+	})
+
+	(:= `<integer>` {
+		{`0` .. `9`}
+		`<integer><integer>`
+	})
+
+	(:= `<float>` {
+		`<integer>.<integer>`
+	})
+
+	(:= `<bool>` {
+		`true`
+		`false`
+	})
+
+	(:= `<expression>` {
+		`<operator>`
+		`(<operator>)`
+	})
+
+	(:= `<operation>` {
+		`<binary-operation>`
+		`<unary-operation>`
+	} )
+
+	(:= `<binary-operation>` {
+		`<logical-binary-operation>`
+		`<arithmetic-binary-operation>`
+		`<bitwise-binary-operation>`
+	})
+
+	(:=
+		`<logical-binary-operation>` {
+			`<expression> && <expression>`
+			`<expression> || <expression>`
+		}
+	)
+	
+	(:=
+		`<arithmetic-binary-operation>` {
+			`<expression> + <expression>`
+			`<expression> - <expression>`
+			`<expression> * <expression>`
+			`<expression> / <expression>`
+		}
+	)
+
+	(:= `<unary-operation>` {
+		`<succession>`
+		`<precession>`
+		`<logical-negation>`
+		`<arithmetic-negation>`
+		`<add-assignment>`
+		`<sub-assignment>`
+		`<div-assignment>`
+		`<mult-assignment>`
+	})
+
+	(:= `<succession>` {
+		`++<variable-name>`
+		`<variable-name>++`
+	})
+
+	(:= `<precession>` {
+		`--<variable-name>`
+		`<variable-name>++`
+	})
+
+	(:= `<logical-negation>` `!<expression>`)
+
+	(:= `<arithmetic-negation>` `-<expression>`)
+	(:= `<add-assignment>` { 
+		`<variable-name> += <expression>`
+	})
+	(:= `<sub-assignment>`
+	(:= `<div-assignment>`
+	(:= `<mult-assignment>`
+	
+	(:=
+		`<control-flow-structure>` {
+			`<conditional>`
+			`<loop>`
+		}
+	)
+
+	(:= `<conditional>` `<if>`)
+
+	(:= `<if>` {
+		`if (<expression>) {
+			<instructions>
+		}\n`
+		`<else-if>`
+		`<if><else>`
+	})
+
+	(:= <else-if> {
+		`else if (<expression>) {
+			<instructions>
+		}\n`
+		`<elseif><elseif>`
+		`<elseif><else>`
+	)
+
+	(:= `<else>` 
+		`else {
+			<instructions>
+		}`
+	)
+
+	(:= `<loop>` {
+		<while>
+		<for>
+	})
+
+(:= `<while>` 
+	`while (<expression>) {
+		<instructions>
+	}`
+)
+
+(:= `<array>` {
+	`[]`
+	`[<elements>]`
+})
+
+(:= `<elements>` {
+	`<element>`
+	`<elements>, <element>`
+})
+
+(:=
+	`<element>` {
+		`<number>`
+		`<bool>`
+		`<char>`
+		`<string>`
+	}	
+)
+
+
+
+(:= `<number-type>` {`<integer-type>` `<float-type>` `<double-type>`})
+
+(:= `<boolean-type>` `bool`)
+
+(:= `<character-type>` `char`)
+
+(:= `<string-type>` `char<general-dereference>`)
+
+(:= `<void-type>` `void`)
+
+(:= `<integer-type>` `int`)
+
+(:= `<float-type>` `float`)
+
+(:= `<double-type>` `double`)
+```
