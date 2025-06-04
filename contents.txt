@@ -1,8 +1,32 @@
-0000 `./contents.txt`
-0000 `./index.txt`
-0001 `./codes.txt`
-0002 `../(!= (()()) ()).md`
-0003 `../## Example of Temporal Causes of Regulation.md`
-0004 `./052925.txt`
-0005 `./053025.txt`
-0006 `./053125.txt`
+05
+	29
+		05292500_NOTE.txt
+
+	30
+		05302500_NOTE.txt
+
+	31
+		05312500_DRVT.txt
+
+06
+	01
+		06012500_DRVT.txt
+		06012501_GRMR.txt 
+		06012502_DRVT.txt 
+		06012502_NOTE.txt
+
+	02
+		06022500_DRVT.txt  
+		06022501_PROOF.txt 
+		06022502_DRVT.txt  
+		06022503_ARGM.txt  
+		06022503_LOG.txt   
+		06022504_NOTE.txt
+  		
+	03
+		06032500_LOG.txt
+
+	04
+		06042500_LOG.txt
+		06042501_ARGM.txt
+
