@@ -1,0 +1,29 @@
+# derivation of openscad module declaration psmildpp0ild
+#					    pa_smila_da_pa_pe_ild
+00 : MOD
+	00 : AXIOM : `<program>`
+	01 : PROP  : `{ <statement> }`												# program
+	02 : PROP  : `{ <module_decl> }` 											# statement[0]
+	03 : PROP  : `module <identifier> "(" [ <parameters> ] ")"`    								# module_decl
+	04 : PROP  : `module <letter> { <letter> | <digit> | "_" } "(" [ <parameters> ] ")"`     				# identifier
+	05 : PROP  : `module a { <letter> | <digit> | "_" } "(" [ <parameters> ] ")"` 						# letter
+	06 : PROP  : `module a_ { <letter> | <digit> | "_" }` "(" [ <parameters> ] ")"`              
+	07 : PROP  : `module a_0 "(" [ <parameters> ]` ")"`									# digit
+	08 : PROP  : `module a_0 "(" [ <parameters> ]` ")"`
+	09 : PROP  : `module a_0 "(" [ <parameter> { "," <paramaters> } ] ")"` 							# paramaters	
+	10 : PROP  : `module a_0 "(" [ <identifier> [ "=" <expression> ] { "," <paramaters> } ] ")"` 				# paramater
+	11 : PROP  : `module a_0 "(" [ <letter> { <letter> | <digit> | "_" } [ "=" <expression> ] { "," <paramaters> } ] ")"`   # identifier 
+	12 : PROP  : `module a_0 "(" [ b { <letter> | <digit> | <"_"> } [ "=" <expression> ] { "," <paramaters> } ] ")"`  	# letter
+	13 : PROP  : `module a_0 "(" [ b_ { <letter> | <digit> | <"_"> } [ "=" <expression> ] { "," <paramaters> } ] ")"`  	# digit
+	14 : PROP  : `module a_0 "(" [ b_0 [ "=" <expression> ] { "," <paramaters> } ] ")"`
+ 	15 : PROP  : `module a_0 "(" [ b_0 ] ")"`										#
+	16 : PROP  : `module a_0 ( [ b_0 ] )`
+	17 : PROP  : `module a_0 ( b_0 )`
+
+# derivation of module instance
+01 : MOD
+	00 : AXIOM : `<program>`
+	01 : PROP  : `{ <statement> }`
+	02 : PROP  : `{ <> }`
+	
+

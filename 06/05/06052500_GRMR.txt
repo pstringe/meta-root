@@ -1,0 +1,100 @@
+	<program> ::= { <statement> }
+
+	<statement> ::= <module_decl>
+                      | <module_inst>
+                      | <assignment>
+                      | <if_statement>
+                      | <for_statement>
+              	      | <while_statement>
+              	      | <function_decl>
+              	      | <expression_statement>
+        	      | <comment>
+
+	<module_decl> ::= "module" <identifier> "(" [ <parameters> ] ")" <block>
+
+	<module_inst> ::= <identifier> "(" [ <arguments> ] ")" [ <block> ]
+
+	<function_decl> ::= "function" <identifier> "(" [ <parameters> ] ")" "=" <expression> ";"
+
+	<parameters> ::= <parameter> { "," <parameter> }
+	<parameter> ::= <identifier> [ "=" <expression> ]
+
+	<arguments> ::= <expression> { "," <expression> }
+
+	<assignment> ::= <identifier> "=" <expression> ";"
+
+	<if_statement> ::= "if" "(" <expression> ")" <block> [ "else" <block> ]
+
+	<for_statement> ::= "for" "(" <identifier> "=" <range> ")" <block>
+
+	<while_statement> ::= "while" "(" <expression> ")" <block>
+
+	00 : PROP : 
+	```
+	<range> ::= "[" <expression> ":" <expression> [ ":" <expression> ] "]"
+	```
+	
+	01 : PROP : 
+	```
+	<block> ::= "{" { <statement> } "}"
+	```
+
+	02 : PROP : 
+	```
+	<expression_statement> ::= <expression> ";"
+	```
+	
+	03 : PROP : 
+	```
+	<expression> ::= <literal>
+       		       | <identifier>
+           	       | <unary_op> <expression>
+              	       | <expression> <binary_op> <expression>
+		       | <identifier> "(" [ <arguments> ] ")"
+              	       | "[" [ <arguments> ] "]"
+	```
+	
+	04 : PROP : 
+	```
+	<literal> ::= <number> | <string> | <boolean> | "[" [ <arguments> ] "]"
+	```
+
+	05 : PROP : 
+	```
+	<binary_op> ::= "+" | "-" | "*" | "/" | "%" 
+        	      	| "==" | "!=" | "<" | ">" | "<=" | ">="
+              		| "&&" | "||"
+
+	```
+	
+	06 : PROP : 
+	```
+	<unary_op> ::= "-" | "!"
+	```
+
+	07 : PROP : 
+	```
+	<comment> ::= "//" <any>* | "/*" <any>* "*/"
+	```
+
+	08 : PROP : 
+	```
+	<identifier> ::= <letter> { <letter> | <digit> | "_" }
+	```
+
+	09 : PROP : 
+	```
+	<number> ::= <digit>+ [ "." <digit>* ] [ ("e" | "E") [ "+" | "-" ] <digit>+ ]
+	```
+
+	10 : PROP : 
+	```
+	<string> ::= "\"" { <any_character_except_quote> } "\""
+	```
+	11 : PROP : 
+	```
+	<boolean> ::= "true" | "false"
+	```
+
+01 : MOD 
+	00 : PROP : 
