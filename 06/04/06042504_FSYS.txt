@@ -1,0 +1,22 @@
+## Formal System for Reductive Derivation of Awk Programs
+00 : MOD
+      # ID   TYPE    REF0   REF1   REF2   REF2   REF3   REF4   CONTENT 		 
+	00 : AXIOM : 0006 : 0004 : 0025 : 0003 : 0001 : 0037 : `/[0-9]+(\.[0-9]+)?/` 		#number
+	01 : AXIOM : 0006 : 0004 : 0025 : 0003 : 0001 : 0038 : `/"([^"\\]|\\.)*"/`	 	#string
+	02 : AXIOM : 0006 : 0004 : 0025 : 0003 : 0001 : 0036 : `/[a-zA-Z_][a-zA-Z0-9_]*/`   	#identifer
+	03 : INFR  : NULL : NULL : NULL : NULL : NULL : NULL : `(=: number {00} )`              #14:58
+	04 : INFR  : NULL : NULL :      :      :      :      : `(=: string {01} )`
+	05 : INFR  :      :      :      :      :      :      : `(=: identifier {02} )`
+	06 :       :      :      :      :      :      :      : 
+	```
+	(=:
+		 primary {
+			{number string identifier array_access}
+		}
+	)
+	```
+	07 : INFR  : 0006 : 0004 : 0025 : 0003 : 0001 : 0022 : `(:= asign_op { "="  "+=" "-=" "*=" "/=" "%=" "^=" })
+	08 : INFR  : 0006 : 0004 : 0025 : 0003 : 0001 : 0026 : `(:= comp_op { "==" "!=" "<" "<=" ">" ">=" })`
+	09 : INFR  : 0006 : 0004 : 0025 : 0003 : 0001 : 0025 : `(:= unary '[{ "+" "-" "!" "~" }] { primary }' )`
+	10 : INFR  : 0006 : 0004 : 0025 : 0003 : 0001 : 0029 : `(:= multiplicative 'unary ')`
+	11 : INFR  : 0006 : 
