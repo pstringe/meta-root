@@ -1,0 +1,19 @@
+# Formal Systems
+00 : MOD
+	00 : DEF  : (:= F { A N T } )
+
+# Dynamical Systems
+01 : MOD
+	00 : DEF : (:= D { IS L SP } )
+
+02 : MOD
+	01 :     : (===  N L)
+	02 :     : (=== SP T)
+	03 :     : (=== A IS)
+	04 
+	
+
+03 : MOD 
+	01 : IMP  : (ALGO x (PROOF (SELF_REF x ) )
+	02 : 
+

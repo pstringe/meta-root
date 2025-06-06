@@ -1,5 +1,11 @@
+00 : MOD 
+	00 : PRD
+	``` 
 	<program> ::= { <statement> }
-
+	```
+	
+	01 : PRD 
+	```
 	<statement> ::= <module_decl>
                       | <module_inst>
                       | <assignment>
@@ -9,42 +15,74 @@
               	      | <function_decl>
               	      | <expression_statement>
         	      | <comment>
-
+	```
+	
+	02 : PRD
+	```
 	<module_decl> ::= "module" <identifier> "(" [ <parameters> ] ")" <block>
+	```
 
+	03 : PRD
+	```
 	<module_inst> ::= <identifier> "(" [ <arguments> ] ")" [ <block> ]
-
+	```
+	
+	04 : PRD
+	```
 	<function_decl> ::= "function" <identifier> "(" [ <parameters> ] ")" "=" <expression> ";"
-
+	```
+	
+	05 : PRD
+	```
 	<parameters> ::= <parameter> { "," <parameter> }
+	```
+	
+	06 : PRD
+	```
 	<parameter> ::= <identifier> [ "=" <expression> ]
+	```
 
+	07 : PRD
+	```
 	<arguments> ::= <expression> { "," <expression> }
-
+	```
+	
+	08 : PRD
+	```
 	<assignment> ::= <identifier> "=" <expression> ";"
-
+	```
+	
+	09 : PRD
+	```
 	<if_statement> ::= "if" "(" <expression> ")" <block> [ "else" <block> ]
-
+	```
+	
+	10 : PRD
+	```
 	<for_statement> ::= "for" "(" <identifier> "=" <range> ")" <block>
-
+	```
+	
+	11 : PRD
+	```
 	<while_statement> ::= "while" "(" <expression> ")" <block>
-
-	00 : PROP : 
+	```
+	
+	12 : PROP : 
 	```
 	<range> ::= "[" <expression> ":" <expression> [ ":" <expression> ] "]"
 	```
 	
-	01 : PROP : 
+	13 : PROP : 
 	```
 	<block> ::= "{" { <statement> } "}"
 	```
 
-	02 : PROP : 
+	14 : PROP : 
 	```
 	<expression_statement> ::= <expression> ";"
 	```
 	
-	03 : PROP : 
+	15 : PROP : 
 	```
 	<expression> ::= <literal>
        		       | <identifier>
@@ -54,12 +92,12 @@
               	       | "[" [ <arguments> ] "]"
 	```
 	
-	04 : PROP : 
+	16 : PROP : 
 	```
 	<literal> ::= <number> | <string> | <boolean> | "[" [ <arguments> ] "]"
 	```
 
-	05 : PROP : 
+	17 : PROP : 
 	```
 	<binary_op> ::= "+" | "-" | "*" | "/" | "%" 
         	      	| "==" | "!=" | "<" | ">" | "<=" | ">="
@@ -67,31 +105,31 @@
 
 	```
 	
-	06 : PROP : 
+	18 : PROP : 
 	```
 	<unary_op> ::= "-" | "!"
 	```
 
-	07 : PROP : 
+	19 : PROP : 
 	```
 	<comment> ::= "//" <any>* | "/*" <any>* "*/"
 	```
 
-	08 : PROP : 
+	20 : PROP : 
 	```
 	<identifier> ::= <letter> { <letter> | <digit> | "_" }
 	```
 
-	09 : PROP : 
+	21 : PROP : 
 	```
 	<number> ::= <digit>+ [ "." <digit>* ] [ ("e" | "E") [ "+" | "-" ] <digit>+ ]
 	```
 
-	10 : PROP : 
+	22 : PROP : 
 	```
 	<string> ::= "\"" { <any_character_except_quote> } "\""
 	```
-	11 : PROP : 
+	23 : PROP : 
 	```
 	<boolean> ::= "true" | "false"
 	```
