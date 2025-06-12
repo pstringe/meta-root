@@ -1,0 +1,133 @@
+# 8:24
+00 : MOD
+	00 : IMP : (trns REL_ENT[1])
+	01 : IMP : (trnl REL_ENT[0])
+	02 : IMP : (trnl REL_ENT[1])
+	03 : IMP : (impl (trck {IO DISPLACEMENTS}))
+
+## NOTES 
+01 : MOD									
+		      # (implies  (not  (rep P x)) (rep (compliment P) x) )
+	00 : PROP : C  :(=>       (~   (P     x )) (    {~          P} x) ) 
+
+	 	      # (implies  (not (rep 	(compliment	P) x) ) (decrease 	(entropy (rep	(compliment	P) x) ) )
+	01 : PROP : C : (=>       (~   (	{~	  	P} x) ) (d 		(e 	 (	{~ 		P} x) ) )
+
+		      # (implies (decrease	(entropy (P (succession-s  P)))) (decrease	(potential 	P) 	) )
+	02 : PROP : C  :(=>	 (d 		(e 	 (P (m 		.. P)))) (d 		(pt 		P)	) )
+ 		      
+		      # 
+	03 : PROP : C : (P (=> (d (pt P)) (i (lz P)) ) ) 
+		      
+		      # 
+	04 : PROP : C : (=>  
+
+# Simple traversal of vector space protect context before proceding
+02 : MOD
+	00 : PROP : P
+	01 : PROP : (m .. P)
+	02 : PROP : (P (m .. P))
+	03 : PROP : [{() ... (m ... ())} {() ... (m ... ())}]
+	04 : PROP : (P [0 0])
+	05 : PROP : (=> (P [0 0]) ([0 0] P) )
+	06 : PROP : (==> P [0 0] )
+	07 : PROP : 
+	07 : PROP : (i
+	06 : PROP : 
+	```
+	(=>
+		(i (- (P {P {~P}}) ([0 0] {P {~P}}) ))
+		
+	```
+# Traversal of a logic
+03 : MOD
+
+	# Traversal of a recursive heirarchy
+	00 : PROP
+	(=>
+		(d (- P MG))
+		(d (- P {SWE CS}))
+	)
+	
+	01 : PROP 
+	(=> 
+		(d (- P {CS SWE}))
+		(d (- P MTH))
+	)
+	
+	02 : PROP 
+	(=>
+		(d (-P MTH))
+		(d (-P 
+	)	
+
+# Resource managment
+	# E 
+	# Persistant information
+	# 	Store
+	#	Access
+
+	
+
+# Recursive Heirarchical Memory Model
+
+# Implement (d (Pg (m .. P) ) )
+04 : MOD 
+	00 : PROP : [() ()]
+	01 : PROP : [() ()] # scalars #vectors #sets #proto-types #types 
+	02 : IMP  : `Recover type definition, def definition`
+	03 : IMP  : `New module`
+
+05 : MOD      
+	# Brute Force
+	00 : IMP  : `List Root folder directories`
+	01 : IMP  : `For each directory, list sub-directories`
+	02 : IMP  : `For each sub-directory, list sub-directory`
+	03 : IMP  : `For each sub-directory, list files`
+	04 : IMP  : `For each file list modules`
+	05 : IMP  : `For each module, if the module matches the target terminate`
+
+06 : MOD	     
+	# Intelligent Algorithm
+	00 : PROP  : `List root folder directories`
+	01 : PROP  : `(:= directories [[][()] ... [][(m ... ())]])`
+	02 : PROP  : `(:A x (=: (subsequence directories) x)))`
+	03 : PROP  : 
+	```
+	(:E a
+		(^
+			(inc a {07})
+			((e ({a{~a}} a)
+		)
+		
+	)
+	```	
+# sucessive itterator 
+07 : MOD
+	01 : PROP : (while a b)
+	02 : PROP : {() ... (m ... ())}
+	03 : PROP : ({> = <} c d )
+	04 : PROP : [p d c d]
+	05 : PROP : [ {() ... (m ... ())} {() ... (m ... ())} ] 
+	05 : PROP : (f [p d c d])
+	06 : PROP : (m [p d c d])[{()... (m ... ())}]
+	
+	06 : PROP : 
+	```
+	(= 
+		(m [p d c d])
+		(? 
+			(< c d)
+			(m [p d c d])[()]
+			(m [p d c d])[(m ())]
+		)
+	)
+	```
+	07 : PROP :
+	```
+	(:= (m [p d c d])[()] {
+		
+	}
+	```
+	
+				
