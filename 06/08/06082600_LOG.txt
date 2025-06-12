@@ -1,0 +1,182 @@
+00 : MOD
+      # ID :      :     : 
+	00 : PROP :  	: `Finish the number theory`
+	01 : IMP  : 	: `Analysis of voluntary/involuntary implications of number theory`
+	02 : IMP  : 	: `Physical implications of number theoretical implications`
+	03 : IMP  : 	: `Review update methods using definite numerical aproximation / arithmetic constraints`
+
+
+01 : MOD
+      #    :      :     : 
+	00 : OBSD :     : `({~P} (P (i (fry (m..P)))))`                				#
+	01 : IMP  : 	: `Review equip prep counter to 'infuriation' or productive utilization`	#
+	01 : IMP  :	: `(P (Cf (i (fry (m .. P)))))`
+	03 : IMP  : 	: `(:E F (F (i (d (P {F P}[LG]))))`
+
+# (P h) involution of (p||| .. h)
+02 : MOD 
+	00 : PROP : `(> () ())`
+	01 : PROP : `(-= (> () ()) (- (> () ()) ()))` 
+
+# (P ({ol ts} sg))
+03 : MOD
+	00 : PROP : 
+	```
+	(:= (P (ts sg)) [
+		(> [][()] [][(m())]) 
+		(< [][(m())] [][()])
+	])
+	```
+	01 : PROP : `(:= () ())`
+
+# (r ({IO} ({e E} P)) (age P))
+04 : MOD
+	00 : PROP : ``
+
+
+05 : MOD
+	01 : PROP : `({ > = < } () () )`
+	02 : PROP : `({ > = < } () { () ({ > = < } () { ... }) })`
+	02 : PROP : `(>> {01} {02})` # inference abstracts away the intricasies I will attempt to demonstrate
+	03 : PROP : 
+	```
+	(:= 
+		({> = <} () ()) {
+			({ > = < } () () )                            	#0 reduction 
+
+			({ > = < } () ()[(m())])			#1 reductions
+			({ > = < } ()[(m())] ())
+			({ > = < } ()[(m())] ()[(m())])
+			 
+			({> = <}                                        #{1 2} select 1 reductions excluding 0th selection () () 
+				(:= ({> = <} () ()) ()[(m (m ()))])
+				()
+			)
+
+			({> = <}
+				()
+				(:= ({> = <} () ()) ()[(m (m ()))])
+			)
+								
+			#{1 2} select 2 reductions excluding 0th selection, (equiv to 2 reductions)
+			({> = <} 
+				(:= ({> = <} () ()) ()[(m (m ()))])
+				(:= ({> = <} () ()) ()[(m (m ()))]) 
+			)
+			
+			
+			# 2 reductions
+			({> = <} 
+				(:= ({> = <} () ()) ()[(m (m ()))])
+				({> = <} () ({> = <} () ()))
+			)
+	
+			({> = <}
+				({> = <} () ({> = <} () ())
+					
+		}
+	)
+	```
+
+
+# combinaitons/permutations complexity
+# ---          		    intricatcy
+
+
+02 : MOD : 
+	00 : IMP  : `(RD 060725)`
+	01 : PROP : `(d (e |((p .. P) (p .. ()))| ))` 
+
+#Reduction of entropy of likley/probable displacements
+03 : MOD :
+	00 : ()			#start
+	
+	01 : (m ())				
+	02 : 	(m ())[()]
+	03 :	(m ())[(m ())]
+	
+	04 : (m (m ()))
+		(m (m ()))[()]
+		(m (m ()))[(m ())]
+	
+	05 : (m (m ()))[(m ())]
+	06 : 	(m (m ()))[(m ())][()]
+	07 : 	(m (m ()))[(m ())][(m())]
+
+	08 : (m (m ()))[(m ())]
+
+## 031825
+04 : MOD :
+	00 : PROP : CNSRVD
+	01 : PROP : (~CNSRVD)
+	02 : PROP : H
+	03 : PROP : (~H)
+	04 : PROP : (() ({id} {(){~()}}))
+	05 : PROP : (~ (=> ({id} ()) ({id} {~()})) 			# space solution
+	06 : PROP : (~(= ({id} {~()}) (() ({id} {~()})))		# hypocrite
+	07 : PROP : ( () (d (- (() {(){~()}}) ({~()} {(){~()}}) ) ) )	# potentially requires regulation
+
+##03182530 Notes
+05 : MOD :
+	00 : PROP : `Ige`
+	01 : PROP : `(f Ige mast) -> histamine` 
+	02 : PROP : `{P (:f (:= f (p||| .. P} )) (+ E 1)} `
+	03 : PROP : `(P H4)`
+	04 : PROP : `(P (H4 (d H4)))`
+	05 : PROP : `(P (d a))`
+	06 : PROP : 
+	```
+	(:E Ad {
+		(Ad  ({id} Ad))
+		(P (Ad (d Ad)))
+	})
+	```
+	07 : PROP : `adipocytes`
+	08 : PROP : `lipolysis`
+	09 : PROP : `(inc PREADIPOCYTES STEM_CELLS)`
+	10 : PROP : 
+	```
+	(:= 
+		(m (: preadipocyte
+			(inc preadipocyte PREADIPOCYTES)
+		))
+		(:adipocyte (inc adipocytes Adipocytes))
+	)
+	```
+	
+	11 : PROP : 
+	```
+	(=>
+		(i {
+			epinephrine
+			noepinephrine
+			cortisol
+			growth_hormone
+		}) 
+	)
+	```
+## 03182531 9..12 Transmitter recepter set_theoretic_rep_logic_0 Notes
+06 : MOD : 
+	00 : PROP : (:t (inc t T))	# x{ t r }
+	01 : PROP : (:r (inc r_c R))    # (x{r} x{t})
+	02 : PROP : (t r_c)
+	03 : PROP : (inc r_c {r t})
+## 041525 - 050225 Notes
+07 : MOD : 
+	00 : PROP : # Pg 5 IDX 5 
+	```
+	(+> {~P}
+		(==>
+			P
+			{~P}
+			x
+			-Ad #Adipocyte Process 
+		)
+		x	
+	)
+	```
+
+	
+	
+		
+	

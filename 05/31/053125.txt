@@ -1,0 +1,340 @@
+# 40
+00 : MOD
+	00 : PROP : 00 : `(< (d[s] (P (S (T N)))) (d[s] (P (S (T N))))`
+	00 : PROP : 01 : `()[(][<][(][d][s][(][P][(][S][(][T][N][)][)][)][)]`
+	00 : PROP : 02 :
+	```
+	(()[<]
+		(()[d][s]
+			(()[P]
+				(()[S] ()[T] ()[N])
+			)
+		)
+	)
+
+01 : MOD
+	01 : PROP : 00 : `({+ - * /} a b)`
+	01 : PROP : 01 : `(+ a b)`
+	01 : PROP : 02 : `(- a b)`
+	01 : PROP : 03 : `(* a b)`
+	01 : PROP : 04 : `(/ a b)`
+
+02 : MOD
+	02 : PROP : 00 : `()[(][+][a][b][)]`
+	02 : PROP : 01 : `(()[`(`][`+`][`a`][`b`][`)`] `(` `+` `()` `(m ())` )`)
+	02 : PROP : 02 : `[(, {, +, -, *, /, }, a, b, )]`
+	02 : PROP : 03 : `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+	02 : PROP : 03 : `[B, C, D, F, G, H, J, K, L, M]`
+	02 : PROP : 03 : `()[0][2][7][8][9]`
+	02 : PROP : 04 : `()[`B`][`D`][`K`][`L`][`M`]`
+	02 : PROP : 05 : `(:= V {A E I O U})`
+	02 : PROP : 06 : `BVDVKVLVM` # entropy in the vowel
+	02 : PROP : 07 : `BADAKALAM`
+	02 : PROP : 08 : `BADAKALEM`
+	02 : PROP : 09 : `BADAKALIM`
+	02 : PROP : 10 : `BADAKALOM`
+	02 : PROP : 11 : `BADAKALUM`
+	02 : PROP : 12 : `BADAKALAM BADAKALAM BADAKALEM BADABADAKALAMABADAKALEMM`    #intuitive and deterministic calculation
+	02 : PROP : 13 : `BADAKALAM BADAKALAM BADAKALIM BADABADAKALAMABADAKALIMM`
+	02 : PROP : 14 : `BADAKALAM BADAKALAM BADAKALOM BADABADAKALAMABADAKALOMM`
+	02 : PROP : 15 : `BADAKALAM BADAKALAM BADAKALUM BADABADAKALAMABADAKALUMM`
+	02 : PROP : 16 : `BADAKALAM BADAKALAM BADAKALEM BADA BADAKALAM A BADAKALEM M` #primitive recursive intelligences expresses deliniation of utterances as space #chomatic-like probability with formal inference
+	02 : PROP : 17 : `BADAKALAM BADAKALAM BADAKALIM BADA BADAKALAM A BADAKALIM M`
+
+# Truth def 0 (Factual/Evidential)
+03 : MOD
+	03 : PROP : 00 : ({=== !===} () ({pm}||| .. ())
+	03 : PROP : 01 : (=== () ({pm}||| .. ()))
+	03 : PROP : 02 : (!=== () ({pm}||| .. ()))
+	03 : PROP : 03 : (>> (=== () ((obs ()) ({pm}||| .. ()))) (== () T))
+
+# Truth def 1
+04 : MOD
+	04 : PROP : 00 : `{A N T}`
+	04 : PROP : 01 : `(:= (m A[{()...(m...())}]) (N[{()...(m...())}] A[{()...(m...())}]))`
+	04 : PROP : 02 : `(>> x (m x))`
+	04 : PROP : 03 : `(>> (== x T) (== x T))`
+
+# Reductions
+05 : MOD
+	05 : PROP : 00 : `(P x)`
+	05 : PROP : 01 : `(P (:= x [ x[()] ... x[(m...())] ]))`
+	05 : PROP : 02 : `(P (:= x ( x[()] ... x[(m...())] ]))`
+	05 : PROP : 03 : `(P (:= x { x[()] ... x[(m...())] }))`
+
+# zero, void
+06 : MOD
+	00 : PROP : 00 : `(!= ({(){~()}} ()) ())`
+	01 : PROP : 01 : `(m ()) *`
+	06 : PROP : 02 : `(m (m ()) **`
+	06 : PROP : 03 : `(m (m (m ()))) ***`
+	06 : PROP : 04 : `(= ({p m} ||| (m ())) `*` )`
+	06 : PROP : 05 : `(= ({p m} ||| (m (m ())) `**` )`
+	06 : PROP : 06 : `(= ({p m} ||| (m (m (m ()))) `***` )`
+	06 : PROP : 07 : `(= ({p m} ||| ()) {~({p m} ||| ())} )`
+	06 : PROP : 08 : `(= ({p m} ||| (m())) (m (p||| ()) )`
+
+# zero, void 1
+07 : MOD
+	07 : PROP : 09 : `(= (p ||| ()) (p (m (p||| ()) )) )`
+	07 : PROP : 10 : `(= (p ||| (m ())) (m (p||| ())) )`
+
+# zero, void 2
+08 : MOD
+	00 : PROP : 00 :
+	```
+	(:=
+		(p| ()) {
+			(p (p| (m ())))
+			(m (p| (p ())))
+		}
+	)
+	```
+
+	00 : PROP : 01 :
+	```
+	(:=
+		(p| (m ())) {
+			(p (p| (m (m ())) ))
+			(m (p| (p (m ())) ))
+		}
+	)
+	```
+
+	00 : PROP : 02 :
+	```
+	(=:
+		(m| (p| (p (m ())) ))
+		(m| (p| ()))
+	)
+	```
+
+	00 : PROP : 03 :
+	```
+	(=:
+		(m| (p| ()))
+		()
+	)
+	```
+
+# Primitive Recursive, Combinatorial Intelligence
+11 : MOD
+	01 : PROP : 01 : `[`(`, `{`, `p`, `m`, `|`, `=`, `:`, `}`, `)`]`
+	02 : PROP : 02 : `[`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`]`
+	03 : PROP : 03 : `[`B`, `C`, `D`, `F`, `H`, `J`, `K`, `L`, `M`]`
+	04 : PROP : 04 : `()[()][(m(m(m(m(m(m(m(m()))))))))]`
+	05 : PROP : 05 : `()[0][8]`
+	06 : PROP : 06 : `()[B][M]`
+	07 : PROP : 07 : `BVM`
+	08 : PROP : 08 : `BAM`
+	09 : PROP : 09 : `BEM`
+	10 : PROP : 10 : `BIM`
+	11 : PROP : 11 : `BOM`
+	12 : PROP : 12 : `BEM`
+
+12 : MOD
+	01 : PROP : 00 : `BBVMM`
+	02 : PROP : 01 : `BBAMM`
+	03 : PROP : 02 : `BBEMM`
+	04 : PROP : 03 : `BBIMM`
+	05 : PROP : 04 : `BBOMM`
+	06 : PROP : 05 : `BBOMM`
+
+13 : MOD
+	00 : PROP : 05 : 31 : 25 : 00 : 12 : 00 : 00 : `B BVM BVM M`
+	01 : PROP : 05 : 31 : 25 : 00 : 12 : 00 : 01 : `B BAM BAM M`
+	02 : PROP : 05 : 31 : 25 : 00 : 12 : 00 : 02 : `B BAM BEM M`
+	03 : PROP : 03 : 31 : 25 : 00 : 12 : 00 : 03 : `B BAM BIM M`
+	04 : PROP : 05 : 31 : 25 : 00 : 12 : 00 : 04 : `B BAM BOM M`
+	05 : PROP : 05 : 31 : 25 : 00 : 12 : 00 : 05 : `B BAM BUM M` # 5 * 5 = 25 #Primitive Recursive, Combinatorial Intelligence
+
+14 : MOD :
+	00 : PROP : 00 : `P : {11.00}`
+	01 : PROP : 01 : `(:= {11.00} {{11.01}, {11.02}, {11.03}, })`
+
+## Theoretical Assembly
+15 : MOD
+	00 : TRMS : `0000 0000 0000 0000`
+    	00 : TRMS : `0000 0000 0000 0001`
+    	00 : TRMS : `0000 0000 0000 0000
+#Meta-Maps
+16 : MOD
+
+#self-ntrchtn
+17 : MOD
+
+#mutual-ntchtn
+18 : MOD
+
+## Df Problem
+19 : MOD
+	00 : PROP : `(P (Df {Mf Sp}))`
+	01 : PROP : `(P ({Ol Lg} (Df {Mf Sp})))`
+	02 : PROP : `(P ({Ol Lg} (Df {Mf Sp})))`
+	03 : PROP : `(P ({id} (Ol (Df {Mf Sp})))`
+	04 : PROP : `(~ (P ({id} (Lg (Df {Mf Sp})))))`
+	05 : PROP :
+	```
+	(:=
+		(P (Ol (Df Mf)))
+		(P
+			(m|||(p|||
+				(Ol (Df {Mf Sp}))
+			))
+		))
+	)
+	```
+
+# Involution of stimulant
+20 : MOD
+	14 : PROP : 06 :
+	```
+	(:=
+		(==>
+			P
+			(m|||(p|||
+				(Ol (Df {Mf Sp}))
+			))
+		)
+		(==>
+			P
+			(==>
+				(m|||(p|||
+					(Ol (Df {Mf Sp}))
+				))
+				(p|||
+					(Ol (Df {Mf Sp}))
+				)
+			)
+		)
+	)
+	```
+
+# Involution of implication of stimulant
+21 : MOD
+	00 : (-> (p||| (Df Mf)) (Df Mf))
+	01 : (-> (Df Mf) (m||| (p||| (Df Mf))))
+	02 : (-> (m||| (p||| (Df Mf))) P)
+	03 : (<- (m||| (p||| (Df Mf))) P)
+	04 : (<- (Df Mf) (m||| (p||| (Df Mf))))
+	05 : (<- (p||| (Df Mf)) (Df Mf))
+
+
+22 : MOD
+    00 : PROP : (=> (-> (p||| (Df Mf)) (Df Mf)) (<- (p||| (Df Mf)) (Df Mf)) )
+    01 : PROP : (=> (<- (m||| (p||| (Df Mf))) P) (m (<- (m||| (p||| (Df Mf))) P))
+    02 : IMP  : (=> (Pg ((m .. P)g (m (<- (m||| (p||| (Df Mf))) P)) ) # 12:12
+(===
+	(-> (p||| (Df Mf)) (M
+```
+
+## Regulaiton Review
+23 : MOD
+	00 : PROP :
+
+# Hypocrites and Contextual Appropriatness
+24 : MOD
+
+# Scientific Contexts
+25 : MOD
+
+# Natural Argument
+26 : MOD
+
+27 : MOD
+	00 : CHN : D
+	01 : CHN : M
+	02 : CHN : X
+
+# INTR Theory
+28 : MOD
+	00 : CONJ : `(=> (i (PRTRCTN x)) (d (PRCRSTN c)))`
+	01 : PRED : `INTERSECTABILITY`
+
+# Equipment / Critical Abstraction Theory
+29 : MOD
+
+# ASM INTR REF MOD 15
+30 : MOD
+	01 : PROP : OBSD : ({~P} (PXOR (P TH) (P AS)))
+	02 : PROP : OBSD : (P (CMB AS TH))
+	03 : PROP : OBSD : ({~P} (=> (P {15.00}) (Pg (~(m .. {15.00}))) ))
+	04 : PROP : OBSD : (P (== {03} C))
+	05 : PROP : PRED : CONTINGENT
+	05 : INFR : NULL : (>> (CONTINGENT X) (== X C))
+	06 : PROP : OBSD : ({P {~P}} (P (d (e (P CONTINGENT)))))
+
+
+31 : MOD # Version Ctrl
+	31 : PROP : OBSD : NULL : NULL : ({~P} (P (GH [05 {29 30 31} 25])))
+	32 : PROP : OBSD : NULL	: NULL : (P (v (P GH) (P (CNST VC)
+	33 : PROP : IMP  : NULL : 0915 : Identify Develop method for redacting lines/modules from push
+
+32 : MOD
+    	00 : PROP : OBSD : `P : {~P} := P : x : {~P}`
+
+33 : MOD
+    	00 : PROP : OBSD : `(P (Df Mf))` # 09:31
+ 	01 : PROP : OBSD : ``
+
+## Proto Game Theory # 21:30
+34 : MOD
+	00 : PROP : {G Pl Pr N}
+	01 : PROP : (:=  G [ [ G Pl Pr N ][()] ... [G Pl Pr N][(m ... ())])
+	02 : PROP : (:= Pl [ Pl[()] ... Pl[(m ... ())] ])
+	03 : PROP : (:= Pr [ Pr[()] ... Pr[(m ... ())] ])	# 
+	04 : PROP : (:=  N [ N[()] ... N[(m ... ())] ]) 	# Inferences
+	05 : PROP : (:=  V [ V[()] ... V[(m ... ())] ]) 	# Validity Rules
+	06 : PROP : (:== (V G[{() ... (m ... ())}] N[{() ... (m ... ())}]) T F)	# :== Value/Classifiaction (>> (:== x {CLASS_0 CLASS_1}) (inc x {CLASS_1 CLASS_2}) ) 
+	07 : PROP : 
+	```
+		(>> 
+			(= (V G[{() ... (m ... ())}] N[{() ... (m ... ())}]) T)
+			(:= 	
+				(m G[{() ... (m ... ())}]) 
+				(N[{() ... (m ... ())}] 
+					G[{() ... (m ... ())}]) 
+				)
+			)
+		)
+	```
+	08 : PROP :
+		
+## Game Contexts 0
+35 : MOD
+	00 : PROP : `Optimal Error`
+	01 : PROP : `FM`
+	02 : PROP : `FM {Sp Mf}`
+	03 : PROP : `TY PR`
+	04 : PROP : `TY`
+	05 : PROP : `PR`
+	06 : PROP : `FRND`
+	08 : PROP : `OPOSITION`
+	10 : PROP : `FNC`
+	11 : PROP : `LEGAL`
+	12 : PROP : `PHYS`
+	13 : PROP : `HLTH`
+	14 : PROP : `KNWLDG`
+	15 : PROP : `ERSR`
+	16 : PROP : `INTL`
+	17 : PROP : `RSRCH`
+	18 : PROP : `TRNG`
+	19 : PROP : `ENG`
+
+## Game Contexts 1
+36 : MOD
+	00 : PROP : `Self-Modifying Games`
+	01 : PROP : `Hyper-Temporal Games`
+	02 : PROP : `Hyper-Spatial Games`
+	03 : PROP : `Information/Security Persistance Games`
+	06 : PROP : `Computational Games`
+	07 : PROP : `Mathematical Games`
+	08 : PROP : `Inductive Games`
+	09 : PROP : `Deductive Games`
+	04 : PROP : `Political Games`
+
+37 : MOD
+
+		
+
+

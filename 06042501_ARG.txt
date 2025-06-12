@@ -1,0 +1,33 @@
+# On the purity of abstractions of information
+00 : MOD
+	00 : PROP : `x`
+	01 : PROP : `a`
+	02 : PROP : `(:= x a)`
+	03 : PROP : `(=: a x)`
+	04 : PROP : `(>> (:= x a) (=: a x))`
+	05 : PROP : `(>> (= (abstraction a) x) (=: a x))`
+	06 : PROP : `(>> (=: a x) (= a (reduction x)))`
+	07 : PROP : 
+	```
+	(= 
+		(purity (abstraction x)) 
+		(/
+			(complexity (abstraction x))
+			(complexity x)
+		)
+	)
+	```
+	08 : PROP : 
+	```
+	(=> 
+		(isomorphic x a)
+		(:
+			(:= x a)
+			(= (purity x) 1)
+		)
+	)
+	```
+	09 : PROP : `(=> (:= x a) (:= (p||| x) a))`
+01 : MOD
+	00 : PROP : ``
+	

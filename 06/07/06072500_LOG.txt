@@ -1,0 +1,215 @@
+00 : MOD 
+      # ID : TYPE : START : ENDT  : CMPLT : SRC : CVAL : TVAL : {+N-} :    
+	00 : IMP  : 4:03  :       :       :     :      :      :       : `Alocate Time for Software Derivations`
+	01 : IMP  :       :       :       :     :      :      :       : `Transcription of reductive Method`
+	02 : IMP  :       :       :       :     :      :      :       : `Formalize Theory of Reductive Method`
+	05 : IMP  :       :       :       :     :      :   R  :       : `(> (e (P V)) (e ({~P} V)) )`
+	06 : IMP  :       :       :       :     :      :      :       : `Algerbra System`
+	07 : IMP  :       :       :       :     :      :      :       : `Convolution of Concave/convex functions`
+	08 : IMP  : 12:05 : 12:30 :       :     :      :      :       : `Simplify Def Def`
+	09 : IMP  : 12:06 : 13:00 :       :     :      :      :       : `Core N-TH Def`
+	10 : IMP  : 	  :       :       :     :      :      :       : `Critical Abstractions/Intricasies` #Prime Numbers, Characteristic vects/values ... 
+
+01 : MOD
+     #  ID
+	00 : PROP : 
+	```
+	(:= 
+		(m||| .. (m||| (p||| Cn)))
+		{
+			(m||| .. (m||| (p||| Cn)))[()]
+				.
+				.
+				.
+			(m||| .. (m||| (p||| Cn)))[(m ... ())]
+		}
+	)
+	```
+	
+	01 : PROP
+	```
+	(=>
+		(P Cn)
+		(P (m|||(p||| Cn)))
+	)
+	```
+	
+	02 : PROP
+	```
+	(=>
+		(P (m||| (p||| Cn)))
+		((p||| .. P) (m||| (p||| Cn)))
+	)
+	```
+
+	03 : PROP 
+	```
+	(:=
+		(p||| .. P)
+		(p||| .. P){{() ...(m .. ())}}
+	)
+	```
+
+	04 : PROP
+	```
+	(:=
+		(p||| .. P){{() ... (m ... ())}}
+		{
+			(p||| .. P){()}
+			.
+			.
+			.
+			(m||| .. P){(m ... ())}
+		}
+	) # (= |(p||| .. P)| (cnt {OPERATORS CRITICAL_ABSTRACTION})) 
+	```
+
+	05 : PROP
+	```
+	(:=
+		((p||| .. P) (m||| (p||| Cn)))
+		((p||| .. P){{()...(m ... ())}} (m||| (p||| Cn)){{() ... (m ... ())}}
+		
+	)
+	```
+# SELF DEFS AND SELF-REFERENTIAL CONSTRAINTS
+03 : MOD : 
+	00 : C 		# Set of Constraints
+	01 : D 		# Set of Definitions
+	02 : O		# Self Referential Props
+	03 : (inc t O)
+	04 : (inc d D)
+	05 : (t t)
+	06 : (=> (t t) (d (e t)))
+	07 : 
+	```
+	(=>
+		(^
+			(t t)
+			(=> (t t) (d (e t)))
+		)
+		(inc t O)
+	) 		
+	```
+	
+	08 : (=> (inc t C) (t t) )
+	
+	09 : (=> (inc t C) (inc t (subset C)))
+	
+	10 :
+	```
+	(=> 	
+		(inc t (subset C))
+		(:E x 
+			(^
+				(inc x (powerset C))
+				(inc t x)
+			)
+		)
+	)
+	```
+
+	11 :
+	```
+	(:A a
+		(:E x
+			(^
+				(inc x (powerset C))
+				(inc a x)
+			)
+		)
+		(a a)
+	)
+	```
+	
+	12 : 
+	```
+	(:E 
+		x 
+		(^
+			(inc x (pws C)) 
+			(
+				(:t 
+					(inc t x) 
+				)
+				x
+			)
+		)
+	)
+
+	```
+02 : MOD
+	00 : PROP :
+	```
+	(=>
+	 	(:= x n)
+		(inc ||| 	
+	)
+	```
+
+03 : MOD 
+	00 : OBSD : 	      :	[C, U ] : `{ (d (E P)) (i (e (P {P{~P}}))) }`
+	01 : OBSD : [U, C, N] : [C, U ] : 
+	```
+	(P 
+		(: x 
+			(=> x
+				[
+						`P : {A .. N} : INSC : MTH : {~P}`
+						`P : { {A .. N} INSC } : {~P}`
+						`P : {A .. N} :  {~P}`
+						`P|: {A .. N} :| {~P}`
+						` |: INSC     :|     `
+			   	   `{A .. N }  : P : INSC     :  {~P}`
+			   	   `{A .. N }  : P :[({id} P)]: INSC : {~P}`
+			   	   `{A .. N }  : P :[(> () 0)]: INSC : {~P}`
+				]
+			)
+		)
+	)
+	```
+	02 : OBSD : [U, C, -] : [C, U ] : `(P (m==> {~P} P) )`
+	03 : OBSD : [U, C, N] : [C, U ] : `(P (:x (=> x (~(d P)))))`
+
+# ON SYSCALLS
+02 : MOD 
+	00 : PROP :
+	```
+	(-> P 
+		(-> SYSCALL SYS r)
+	)
+	```
+	
+	01 : PROP :
+	```
+	(<- ERRNO
+		(<- SYSCALL SYS err)
+	)
+
+	02 : PROP :
+	```
+	(=>>
+		(<- SYSCALL SYS err)
+		(-> SYSCALL ERRNO:SET err)
+	) 
+	```
+
+	03 : PROP :
+	```
+	(:= PROCESS_ID {
+		(: {} 
+			(^ 
+				(inc {} Z)
+				(^
+					(> {} 0)
+					(< {} 30000)
+				)
+			)
+		)
+	})
+	```
+	
+	04 : DEF : 
+
+03 : MOD
+	00 : PROP : 

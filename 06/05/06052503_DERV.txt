@@ -1,0 +1,40 @@
+00 : MOD
+	00 : STRT : `<program>`
+	01 : NTRM : `<external_declaration>*`										#program
+	02 : NTRM : `<function_definition> | <declaration>` 								#external_declaration
+	03 : NTRM : `<declaration_specifiers> <declarator> <compound_statement>`					#function_definition
+	04 : NTRM : `<type_specifier> | <type_specifier> <declaration_specifiers> <declarator> <compound_statement>	#function_definition
+	05 : NTRM : `<type> <declarator> <compound_statement>`								#declaration_specifiers 0
+	06 : NTRN : `{ "void" | "char" | "int" | "float" | "double" } <declarator> <compound_statement>`		#type
+	07 : NTRM : `void <declartor> <compound_statement>`								#type 0
+	08 : NTRM : `void <pointer>? <direct_declarator> <compound_statement>`
+	09 : NTRM : `void { "*" | "*" <pointer> }? <direct_declarator> <compound_statement>`
+	10 : NTRM : `void *<direct_declarator> <compound_statement>`
+	11 : NTRM : 
+	```
+	void *|<identifier>					  | <compound_statement>
+	      | "(" <declaration> ")"				  |
+	      | <direct_declarator> "[" <constant_expression>? "]"|
+	      | <direct_declarator> "(" <parameter_lists>? ")"    |
+		
+	```
+	12 : NTRM : void *<direct_declarator> "(" <parameter_lists>? ")" <compound_statement>
+	13 : NTRM : void *<identifier> "(" <parameter_lists>? ")" <compound_statement>
+	14 : NTRM : void *a "(" <parameter_lists>? ")" <compound_statement>
+	15 : NTRM : void *a ( ) <compound_statement>
+	14 : NTRM : void *a ( ) "{" <block_item_list>? "}"
+	15 : NTRM : void *a ( ) { `<block_item>` `<block_item> <block_item_list>`}
+	16 : NTRM : void *a ( ) <block_item>
+	17 : NTRM : void *a ( ) <declaration> | <statement>
+	18 : NTRM : void *a ( ) <declaration> 
+	19 : NTRM : void *a ( ) <pointer>? <direct_declarator>
+	20 : NTRM : void *a ( ) <direct_declarator>
+	21 : NTRM : 
+	```
+	void *a|<identifier>
+	       |"(" <declarator> ")"
+	       | <direct_declarator> "[" <constant_expression>? "]"
+	       | <direct_declarator> "(" <parameter_list>? ")"
+	22 : NTRM : <do>
+
+		 
