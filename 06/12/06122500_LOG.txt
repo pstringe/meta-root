@@ -1,0 +1,61 @@
+00 : MOD
+	00 : PROP : INPUT
+	01 : PROP : USER
+	02 : PROP : TERM
+	03 : PROP : STRING
+	04 : PROP : (inc t TERM)
+	05 : PROP : (inc s STRING)
+	06 : PROP : (INPUT TERM s)
+	
+	07 : PROP : 
+	```
+	(=> 
+		(input TERM x)
+		(TERM x)
+	)
+	```
+	
+	08 : PROP : 
+	```
+	(=>
+		(TERM x)
+		((p|||.. TERM) (m||| .. x))
+	)
+	```
+	
+	09 : PROP : 
+	```
+	(=>
+		(p|||.. TERM) (m||| .. x))
+		({id} (p|||.. TERM))
+	)
+	```
+	
+	10 : PROP :
+	```
+	(TERM (m||| ({id} (p|||.. TERM) ) ) )
+	```
+
+	11 : PROP : 
+	```
+	(=: (m||| ({id} (p|||.. TERM) ) ) (m x) )
+	```
+
+	12 : PROP : 
+	```
+	(=>
+		(^ {10} {11})
+		(TERM (m x))
+	)
+	```
+
+	13 : PROP : 
+	```
+	(=: 
+		(TERM (m x) )
+		(output (input TERM x))	
+	)
+	```	
+
+MOD : 01
+	
