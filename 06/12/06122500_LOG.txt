@@ -53,7 +53,8 @@
 	```
 	(=: 
 		(TERM (m x) )
-		(output (input TERM x))	
+	
+	(output (input TERM x))	
 	)
 	```	
 

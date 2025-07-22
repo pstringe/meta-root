@@ -1,0 +1,10 @@
+00 : MOD 
+	00 : TERM : MAT
+	01 : TERM : PART
+	02 : TERM : ICULAR
+	03 : NTRM : { MAT PART } ICULAR
+
+01 : MOD : 
+	04 : TRNS : (>> `{ MAT PART } ICULAR` (ICULAR {MAT PART}))
+
+	

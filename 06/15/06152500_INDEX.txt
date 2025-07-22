@@ -1,0 +1,6 @@
+00 : MOD 
+	# IDX TYPE START VAL
+	00 : 14 : OBSG 	: (> (==> P {~P}) (==> {~P} P)) 
+	01 : 15 : HYP 	: (> (lk (+> K (==> P K ) ) ) (lk (+> L (==> P L) ) ) )
+	02 : 16 : PROP 	: ({> = <} P L)                                        #13:06
+	03 : 17 : IMP   :  	    
